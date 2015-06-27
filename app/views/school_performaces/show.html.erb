@@ -1,0 +1,24 @@
+<div class="page-header">
+  <%= link_to school_performaces_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+  <% end %>
+  <%= link_to edit_school_performace_path(@school_performace), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span> Editar
+  <% end %>
+  <h1>Visualizar desempenho escolar</h1>
+</div>
+
+<dl class="view">
+  <dt>Estudante:</dt>
+  <dd><%= @school_performace.student.name %></dd>
+
+  <dt>Inicial:</dt>
+  <dd><%= @school_performace.sdate %></dd>
+
+  <dt>Final:</dt>
+  <dd><%= @school_performace.fdate %></dd>
+
+  <dt>Descrição:</dt>
+  <dd><%= @school_performace.description.html_safe %></dd>
+
+</dl>

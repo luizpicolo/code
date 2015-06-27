@@ -1,0 +1,27 @@
+<div>
+  <%= link_to incidents_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+  <% end %>
+  <%= link_to edit_incident_path(@incident), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span> Editar
+  <% end %>
+  <h1>Visualizar ocorrência</h1>
+</div>
+
+<dl class="view">
+  <dt>Estudante:</dt>
+  <dd><%= @incident.student.name %></dd>
+
+  <dt>Data ocorrência:</dt>
+  <dd><%= @incident.date_insident_format %></dd>
+
+  <dt>Criado por:</dt>
+  <dd><%= @incident.user.name %></dd>
+
+  <dt>Descrição:</dt>
+  <dd><%= @incident.description.html_safe %></dd>
+
+  <dt>Solução:</dt>
+  <dd><%= @incident.soluction.html_safe %></dd>
+
+</dl>

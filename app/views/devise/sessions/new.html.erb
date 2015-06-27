@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>C.O.D.E - Controle de ocorrências e desempenho escolar</title>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <%= javascript_include_tag "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js", "https://oss.maxcdn.com/respond/1.4.2/respond.min.js" %>
+  <![endif]-->
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <body class="login">
+    <%= render 'layouts/alerts' %>
+    <div class="container col-sm-12">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin"}) do |f| %>
+        <h1 class="form-signin-heading text-center">C.O.D.E</h1>
+        <p class="text-center">
+          Controle de ocorrências e desempenho escolar
+        </p>
+        <%= f.label :email, class: "sr-only" %>
+        <%= f.email_field :email, class: "form-control", placeholder: 'Email' %>
+        <%= f.label :password, class: "sr-only" %>
+        <%= f.password_field :password, class: "form-control", placeholder: 'Senha'%>
+        <%= f.submit "Entrar", class: "btn btn-primary"%>
+      <% end %>
+    </div>
+    <p class="text-center">
+      Caso não possua um login, contate o administrador(a) do sistema
+    </p>
+  </body>
+</html>

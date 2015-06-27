@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js" lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Relatório</title>
+
+    <style type="text/css">
+      body {
+        font-family: Arial;
+        margin: 0 auto;
+        width: 770px;
+      }
+
+      header h1, header h2 {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-size: 1.5em;
+      }
+
+      p, th, td {
+        padding: 0;
+        margin: 0;
+      }
+
+      .info_student {
+        margin: 20px 0;
+        line-height: 1.5;
+      }
+
+      .footer div {
+        display: inline-block;
+        text-align: center;
+        width: 48%;
+      }
+
+      .date {
+        margin-top: 40px;
+        margin-left: -20px;
+        text-align: center;
+      }
+
+      .description {
+        margin-bottom: 40px;
+        text-align: justify;
+        line-height: 1.5;
+      }
+
+      .description p {
+        margin: 10px 0;
+        text-align: justify;
+      }
+
+      .image {
+        /*float: left;*/
+        margin: 4px 10px 0 0;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <h1>Nome da instituição de ensino</h1>
+        <% if params[:type] == '1' %>
+          <h2>Relatório de ocorrências</h2>
+        <% else %>
+          <h2>Relatório de desempenho escolar</h2>
+        <% end %>
+      </div>
+    </header>
+
+    <div class="info_student">
+      <% if @data_report.first.student.image.present? %>
+      <div class="image">
+        <% #= image_tag @data_report.first.student.image.thumb %>
+      </div>
+      <% end %>
+      <p><b><%= @data_report.first.student.name %></b></p>
+      <p><b>Responsável:</b> <%= @data_report.first.student.responsible %> / <%= @data_report.first.student.contact_responsible %> </p>
+      <% if params[:type] == '2' %>
+      <p> De <b><%= @data_report.first.sdate %></b> à <b><%= @data_report.first.fdate %></b></p>
+      <% end %>
+    </div>
+
+    <% @data_report.each do |sp| %>
+    <div class="description">
+      <% if params[:type] == '1' %>
+      <p>De <b><%= sp.sdate %></b> à <b><%= sp.fdate %></b></p>
+      <% end %>
+
+      <% if params[:type] == '2' %>
+      <p><b>Descrição do desempenho do aluno</b></p>
+      <%= sp.description.html_safe %>
+      <% end %>
+
+      <% if params[:type] == '1' %>
+      <p><b>Problema ocorrido</b></p>
+      <%= sp.description.html_safe %>
+      <p><b>Solução adoata para o problema</b></p>
+      <%= sp.soluction.html_safe %>
+      <% end %>
+    </div>
+    <% end %>
+
+    <div class="footer">
+      <div>
+        <p>Aluno(a)</p>
+        <p>____________________________</p>
+      </div>
+      <div>
+        <p>Responsável</p>
+        <p>____________________________</p>
+      </div>
+    </div>
+
+    <div class="date">
+      Data de comparecimento do responsável: ____ de _____________ de 201__
+    </div>
+  </body>
+</html>

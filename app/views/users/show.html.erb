@@ -1,0 +1,21 @@
+<div>
+  <%= link_to users_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+  <% end %>
+  <%= link_to edit_user_path(@user), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span> Editar
+  <% end %>
+  <h1>Visualizar usuário</h1>
+</div>
+
+<dl class="view">
+  <dt>Name:</dt>
+  <dd><%= @user.name %></dd>
+
+  <dt>Admin:</dt>
+  <dd><%= @user.admin %></dd>
+
+  <dt>Status:</dt>
+  <dd><%= @user.status %></dd>
+
+</dl>

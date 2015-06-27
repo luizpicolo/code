@@ -1,0 +1,71 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *= require alert_message
+ *= require jquery-ui
+ *= require devise_bootstrap_views
+ *= require bootstrap-wysihtml5
+ */
+
+ // Bootstrap
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ .project-name {
+   margin: 12px 15px 0 15px;
+   font-size: 24px;
+ }
+
+ .jumbotron {
+   h1 {
+     margin: 0 0 -15px -2px;
+   }
+ }
+
+ .check_box {
+   margin-top: 5px;
+ }
+
+ .margin-top {
+   margin-top: 5px !important;
+ }
+
+ .view {
+   dd {
+     margin-bottom: 10px;
+   }
+ }
+
+ .login {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 350px;
+   margin: -180px 0 0 -200px;
+
+   input {
+     margin-bottom: 10px;
+   }
+ }
+
+ .wysihtml5-sandbox {
+   min-height: 200px !important;
+ }
+
+ .wysihtml5-toolbar {
+   display: none !important;
+ }
+
+ .navbar-form {
+   margin-right: -14px !important;
+ }

@@ -1,0 +1,44 @@
+<%= form_for(@student, html: { class: "form-horizontal", role: "form" }) do |f| %>
+<br />
+  <div class="form-group">
+    <%= f.label :name, 'Nome', class: "col-sm-2 control-label" %>
+    <div class="col-sm-5">
+      <%= f.text_field :name, class: "form-control col-sm-5" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :responsible, 'Responsável', class: "col-sm-2 control-label" %>
+    <div class="col-sm-5">
+      <%= f.text_field :responsible, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :contact_responsible, 'Contato resp.', class: "col-sm-2 control-label" %>
+    <div class="col-sm-5">
+      <%= f.text_field :contact_responsible, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :date_enrolment, 'Data matrícula', class: "col-sm-2 control-label" %>
+    <div class="col-sm-5">
+      <%= f.text_field :date_enrolment, class: "form-control datepicker", value: @student.date_enrolment_format %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :image, 'Imagem', class: "col-sm-2 control-label" %>
+    <div class="col-sm-5 margin-top">
+      <%= f.file_field :image %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :status, 'Ativo?', class: "col-sm-2 control-label" %>
+    <div class="col-sm-5 margin-top">
+      <%= f.check_box :status %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-5">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

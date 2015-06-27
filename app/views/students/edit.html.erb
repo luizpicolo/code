@@ -1,0 +1,11 @@
+<div>
+  <%= link_to students_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+  <% end %>
+  <%= link_to @student, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span> Visualizar
+  <% end %>
+  <h1>Editar estudante</h1>
+</div>
+
+<%= render 'form' %>

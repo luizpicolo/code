@@ -1,0 +1,32 @@
+<%= form_for(@school_performace, html: { class: "form-horizontal", role: "form" }) do |f| %>
+<br />
+  <div class="form-group">
+    <%= f.label :student, 'Estudante', class: "col-sm-2 control-label" %>
+    <div class="col-sm-5">
+      <%= f.autocomplete_field :student_id, autocomplete_student_name_school_performaces_path, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :start_date, 'Início', class: "col-sm-2 control-label" %>
+    <div class="col-sm-5">
+      <%= f.text_field :start_date, value: @school_performace.sdate, class: "form-control datepicker" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :finish_date, 'Final', class: "col-sm-2 control-label" %>
+    <div class="col-sm-5">
+      <%= f.text_field :finish_date, value: @school_performace.fdate, class: "form-control datepicker" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, 'Descrição', class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_area :description, class: "form-control wysihtml5" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-5">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

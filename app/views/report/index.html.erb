@@ -1,0 +1,34 @@
+<div>
+  <h1>Gerar relatório</h1>
+</div><br />
+<%= form_tag report_print_path << '.pdf', method: 'get', class: "form-horizontal" do %>
+<div class="form-group">
+  <%= label_tag 'Estudante', nil, class: "col-sm-2 control-label" %>
+  <div class="col-sm-5">
+    <input class="form-control" data-autocomplete="/school_performaces/autocomplete_student_name" type="text" name="school_performace[student_id]" id="school_performace_student_id" />
+  </div>
+</div>
+<div class="form-group">
+  <%= label_tag 'Tipo', nil, class: "col-sm-2 control-label" %>
+  <div class="col-sm-5">
+    <%= select_tag "type", options_for_select([["Ocorrência", 1], ["Desempenho escolar", 2]], params[:type]), class: "form-control col-sm-5" %>
+  </div>
+</div>
+<div class="form-group">
+  <%= label_tag 'Data inicial', nil, class: "col-sm-2 control-label" %>
+  <div class="col-sm-5">
+    <%= text_field_tag :dinitial, nil, class: "form-control col-sm-5 datepicker", required: true %>
+  </div>
+</div>
+<div class="form-group">
+  <%= label_tag 'Data final', nil, class: "col-sm-2 control-label" %>
+  <div class="col-sm-5">
+    <%= text_field_tag :dfinish, nil, class: "form-control col-sm-5 datepicker", required: true %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-5">
+    <%= submit_tag 'Gerar relatório', class: "btn btn-primary" %>
+  </div>
+</div>
+<% end %>

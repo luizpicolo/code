@@ -1,0 +1,30 @@
+<div>
+  <%= link_to students_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+  <% end %>
+  <%= link_to edit_student_path(@student), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span> Editar
+  <% end %>
+  <h1>Visualizar estudante</h1>
+</div>
+
+<dl class="view">
+  <dt>Name:</dt>
+  <dd><%= @student.name %></dd>
+
+  <dt>Responsible:</dt>
+  <dd><%= @student.responsible %></dd>
+
+  <dt>Contact responsible:</dt>
+  <dd><%= @student.contact_responsible %></dd>
+
+  <dt>Date enrolment:</dt>
+  <dd><%= @student.date_enrolment_format %></dd>
+
+  <dt>Image:</dt>
+  <dd><%= image_tag @student.image.thumb %></dd>
+
+  <dt>Status:</dt>
+  <dd><%= @student.status %></dd>
+
+</dl>

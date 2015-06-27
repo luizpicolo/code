@@ -1,0 +1,11 @@
+<div>
+  <%= link_to school_performaces_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span> Voltar
+  <% end %>
+  <%= link_to @school_performace, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span> Visualizar
+  <% end %>
+  <h1>Editar performace escolar</h1>
+</div>
+
+<%= render 'form' %>

@@ -1,0 +1,12 @@
+<% flash.each do |key, value| %>
+	<%
+		if key != 'success' && key != 'danger' && key != 'notice'
+			key = 'danger'
+		end
+	%>
+    <div class="alert-message alert-message-<%= key %>">
+      <button type="button" class="close">&times;</button>
+      <%= value.html_safe %>
+    </div>
+<% end %>
+<%= show_messages %>

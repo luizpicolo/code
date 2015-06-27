@@ -1,0 +1,23 @@
+development: &dev
+  host: 127.0.0.1
+  adapter: postgresql
+  encoding: unicode
+  database: code_dev
+  pool: 5
+  username: postgres
+  password: postgres
+
+test: &test
+  host: 127.0.0.1
+  adapter: postgresql
+  encoding: unicode
+  database: code_test
+  pool: 5
+  username: postgres
+  password: postgres
+
+staging:
+  <<: *dev
+
+production:
+  <<: *dev

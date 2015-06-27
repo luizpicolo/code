@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
+  skip_authorize_resource :only => [:profile, :update]
+  # skip_authorize_resource :put, :only => :update
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
@@ -37,13 +40,17 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(check_password(user_params))
-      redirect_to users_path, flash: { success: 'Usuário atualizado com sucesso' }
+      if current_user.admin?
+        redirect_to users_path, flash: { success: 'Usuário atualizado com sucesso' }
+      else
+        redirect_to :back, flash: { success: 'Usuário atualizado com sucesso' }
+      end
     else
       error_msg = ''
       @user.errors.full_messages.each do |msg|
         error_msg << "<div>#{msg}</div>"
       end
-      redirect_to edit_user_path, flash: { error: error_msg }
+      redirect_to :back, flash: { error: error_msg }
     end
   end
 

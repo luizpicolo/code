@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-
   devise_for :users
 
   resources :users
+  get '/perfil' => 'users#profile'
+
   resources :incidents
   resources :school_performaces do
     get :autocomplete_student_name, on: :collection

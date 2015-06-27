@@ -49,7 +49,7 @@
         <% if current_user.admin? %>
         <%= link_to 'Relatórios', report_path, class: "list-group-item" %>
         <% end %>
-        <a href="#" class="list-group-item">Perfil</a>
+        <%= link_to 'Perfil', "/perfil", class: "list-group-item"%>
         <% if current_user.admin? %>
         <%= link_to 'Usuários', users_path, class: "list-group-item" %>
         <% end %>

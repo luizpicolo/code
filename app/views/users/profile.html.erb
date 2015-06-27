@@ -1,0 +1,42 @@
+<div>
+  <%= link_to users_path, class: 'btn btn-default' do %>
+    <i class="glyphicon glyphicon-arrow-left"></i> Voltar
+  <% end %>
+  <%= link_to @user, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span> Visualizar
+  <% end %>
+  <h1>Perfil</h1>
+</div>
+
+<%= form_for(@user, html: { class: "form-horizontal", role: "form" }) do |f| %>
+  <br />
+  <div class="form-group">
+    <%= f.label :name, 'Nome', class: "col-sm-2 control-label" %>
+    <div class="col-sm-5">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, 'Email', class: "col-sm-2 control-label" %>
+    <div class="col-sm-5">
+      <%= f.email_field :email, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :password, 'Senha', class: "col-sm-2 control-label" %>
+    <div class="col-sm-5">
+      <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :password_confirmation, 'Confirmar senha', class: "col-sm-2 control-label" %>
+    <div class="col-sm-5">
+      <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-5">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

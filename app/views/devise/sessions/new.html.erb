@@ -23,6 +23,7 @@
     <%= render 'layouts/alerts' %>
     <div class="container col-sm-12">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin"}) do |f| %>
+        <div class="text-center"><%= image_tag 'code.png', width: 120 %></div>
         <h1 class="form-signin-heading text-center">C.O.D.E</h1>
         <p class="text-center">
           Controle de ocorrências e desempenho escolar

@@ -24,6 +24,10 @@
  .project-name {
    margin: 12px 15px 0 15px;
    font-size: 24px;
+
+    img {
+      margin-top: -5px;
+    }
  }
 
  .jumbotron {
@@ -51,7 +55,7 @@
    top: 50%;
    left: 50%;
    width: 350px;
-   margin: -180px 0 0 -200px;
+   margin: -200px 0 0 -200px;
 
    input {
      margin-bottom: 10px;

@@ -70,6 +70,26 @@
    display: none !important;
  }
 
+.text-system {
+  font-size: 17px;
+}
+
  .navbar-form {
    margin-right: -14px !important;
  }
+
+.page-header {
+  margin-top: 0 !important;
+  padding: 0 !important;
+
+  h1 {
+    margin-top: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.subtitle-list h1 {
+  position: relative !important;
+  top: 10px !important;
+  padding-bottom: 10px !important;
+}

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :students
   get '/report' => 'report#index', as: :report
   get '/report/print' => 'report#print', as: :report_print
+  get '/about' => 'about#index', as: :about
 
   mount_rails_db_info as: 'rails_db_info_engine' if Rails.env.development?
 

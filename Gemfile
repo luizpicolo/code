@@ -46,7 +46,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'mina'
-  gem 'rspec-rails', require: 'rspec/rails'
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
   gem 'spring'

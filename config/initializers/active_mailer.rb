@@ -1,4 +1,4 @@
-Rails.env.on(:any) do |config|
+Rails.env.on(:any) do
   # config mailer
   config.action_mailer.default_url_options = { host: ENV['DOMAIN'] }
   config.action_mailer.raise_delivery_errors = true
@@ -14,7 +14,7 @@ Rails.env.on(:any) do |config|
     :openssl_verify_mode => 'none'
   }
 end
-Rails.env.on(:development) do |config|
+Rails.env.on(:development) do
   # Send email in development mode.
   config.action_mailer.perform_deliveries = true
 end

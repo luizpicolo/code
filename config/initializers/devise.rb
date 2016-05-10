@@ -258,7 +258,7 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 end
 
-Rails.env.on(:any) do |config|
+Rails.env.on(:any) do
   # Configuration for layouts
   config.to_prepare do
    Devise::SessionsController.layout false

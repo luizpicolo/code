@@ -4,7 +4,8 @@
 
 Veja o hotsite para divulgação do sistema: http://sistemacode.github.io/site-code/
 
-O Controle de Ocorrências de Desempenho Escolar é um software desenvolvido com o objetivo de controlar parte do processo de ocorrências e relatórios de desempenho escolar de forma prática e segura. Possui menus auto-explicativos e, futuramente, um manual eletrônico para o auxilo no manuseio do software, ou, para usuários mais avançados, à adaptação de novos sistemas baseados em seu cõdigo fonte. Sendo assim, pode-se dizer que, o Sistema de Gestão de Ocorrências de Desempenho Escolar é de fácil operação e automatiza as principais rotinas envolvidas no objetivo proposto.
+O Controle de Ocorrências de Desempenho Escolar, C.O.D.E, é um software desenvolvido com o objetivo de controlar parte do processo de ocorrências e relatórios de desempenho escolar de forma prática e segura. Possui menus auto-explicativos e, futuramente, um manual eletrônico para o auxilo no manuseio do software, ou, para usuários mais avançados, à adaptação de novos sistemas baseados em seu cõdigo fonte.     
+Sendo assim, pode-se dizer que, o Sistema de Gestão de Ocorrências de Desempenho Escolar é de fácil operação e automatiza as principais rotinas envolvidas no objetivo proposto.
 Operando em ambiente web, tem visual limpo que torna a navegação simples e rápida, trabalhando em mono ou multi-usuário.
 
 ## Preview
@@ -13,7 +14,7 @@ Operando em ambiente web, tem visual limpo que torna a navegação simples e rá
 
 ## Instalação
 
-O C.O.D.E foi desenvolvido utilizando a linguagem de programação Ruby com o Framework Rails com banco de dados PostgreSql. Logo, para que ele seja executado você necessita de um ambiente que contenha todas estas caracteristicas. Se não possui, siga os passos descritos em **Criando o ambiente para a execução do C.O.D.E**. Caso já possua um ambiente, siga para **Instando o C.O.D.E**
+O C.O.D.E foi desenvolvido utilizando a linguagem de programação Ruby com o Framework Rails com banco de dados PostgreSql. Logo, para que ele seja executado, você necessita de um ambiente que contenha todas estas caracteristicas. Se não possui, siga os passos descritos em **Criando o ambiente para a execução do C.O.D.E**. Caso já possua um ambiente, siga para **Instando o C.O.D.E**
 
 ## Criando o ambiente para execução do C.O.D.E
 ***(Distribuiçoes baseadas do distro Debian)***    

@@ -68,6 +68,12 @@ OBS: Existem várias formas de se criar um ambiente de execuçao, fique a vontad
 Para executar os testes :D
 
     rake db:test:prepare && rspec
+	
+## Coisas a fazer
+
+ - Internacionalização
+ - Tradução do README para inglẽs
+ - Manual acoplado ao sistema (Aberto a propostas)
 
 ## Acesso ao sistema
 

@@ -31,6 +31,7 @@ OBS: Existem várias formas de se criar um ambiente de execuçao, fique a vontad
     sudo service postgresql restart
 
 ### Configurar server Ruby
+
     sudo apt-get install libcurl4-openssl-dev -y &&
     curl -L get.rvm.io | bash -s stable &&
     source ~/.rvm/scripts/rvm &&
@@ -42,7 +43,7 @@ OBS: Existem várias formas de se criar um ambiente de execuçao, fique a vontad
 
 **Apenas para ambiente de produção**    
 
-	gem install passenger &&
+    gem install passenger &&
     sudo apt-get install libpq-dev &&
     rvmsudo passenger-install-nginx-module &&
     sudo update-rc.d nginx defaults
@@ -61,14 +62,18 @@ OBS: Existem várias formas de se criar um ambiente de execuçao, fique a vontad
 
 **Terceiro passo** Dentro do local onde o projeto foi clonado, execute os comando abaixo para migrar o banco de dados e criar o primeiro usuário do sistema
 
-    bundle install && rake db:create && rake db:migrate && rake db:seed
+    bundle install && rake db:create && rake db:migrate
+
+Caso deseje adicionar alguns dados de testes
+
+    rake code:seed_example_data
 
 ## Teste
 
 Para executar os testes :D
 
     rake db:test:prepare && rspec
-	
+
 ## Coisas a fazer
 
  - Internacionalização

@@ -1,4 +1,4 @@
-# C.O.D.E - Controle de ocorências e desempenho escolar
+# C.O.D.E - Controle de ocorrências e desempenho escolar
 
 ## Sobre o sistema
 

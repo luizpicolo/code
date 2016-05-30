@@ -2,7 +2,7 @@
 
 ## Sobre o sistema
 
-Veja o hotsite para divulgação do sistema: http://sistemacode.github.io/site-code/
+Veja o hotsite para divulgação do sistema: http://sistemacode.github.io    
 
 O Controle de Ocorrências de Desempenho Escolar, C.O.D.E, é um software desenvolvido com o objetivo de controlar parte do processo de ocorrências e relatórios de desempenho escolar de forma prática e segura. Possui menus auto-explicativos e, futuramente, um manual eletrônico para o auxilo no manuseio do software, ou, para usuários mais avançados, à adaptação de novos sistemas baseados em seu cõdigo fonte.     
 Sendo assim, pode-se dizer que, o Sistema de Gestão de Ocorrências de Desempenho Escolar é de fácil operação e automatiza as principais rotinas envolvidas no objetivo proposto.

@@ -14,13 +14,13 @@ Operando em ambiente web, tem visual limpo que torna a navegação simples e rá
 
 ## Instalação
 
-O C.O.D.E foi desenvolvido utilizando a linguagem de programação Ruby com o Framework Rails e o banco de dados PostgreSQL. Logo, para que ele seja executado, você necessita de um ambiente que contenha todos estes recursos. Se não possui, siga os passos descritos em **Criando o ambiente para a execução do C.O.D.E**. Caso já possua o ambiente necessário, siga para **Instando o C.O.D.E**.
+O C.O.D.E foi desenvolvido utilizando a linguagem de programação Ruby com o Framework Rails e o banco de dados PostgreSQL. Logo, para que ele seja executado, você necessita de um ambiente que contenha todos estes recursos. Se não possui, siga os passos descritos em **Criando o ambiente para a execução do C.O.D.E**. Caso já possua o ambiente necessário, siga para [**Instalando o C.O.D.E**](#id-instalando-o-code).
 
 ## Criando o ambiente para execução do C.O.D.E
 ***(Distribuiçoes baseadas do distro Debian)***
 OBS: Existem várias formas de se criar um ambiente de execução, fique a vontade para escolher o que mais lhe é familiar.
 
-### Primeiramente instale o PostegreSQL
+### Primeiramente instale o PostgreSQL
 
     sudo apt-get install postgresql postgresql-contrib
 
@@ -30,7 +30,7 @@ OBS: Existem várias formas de se criar um ambiente de execução, fique a vonta
     psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'"
     sudo service postgresql restart
 
-### Configurar o server Ruby
+### Configurando o server Ruby
 
     sudo apt-get install libcurl4-openssl-dev -y &&
     curl -L get.rvm.io | bash -s stable &&
@@ -48,7 +48,9 @@ OBS: Existem várias formas de se criar um ambiente de execução, fique a vonta
     rvmsudo passenger-install-nginx-module &&
     sudo update-rc.d nginx defaults
 
-## Instando o C.O.D.E
+<div id="id-instalando-o-code"></div>
+
+## Instalando o C.O.D.E
 
 **Primeiro passo:** Execute o comando abaixo para clonar o repositório para a máquina que disponibilizará o sistema
 
@@ -82,7 +84,7 @@ Para executar os testes :D
 
 ## Acesso ao sistema
 
-Caso todos os passoa acima tenham sido executados corretamente, você está apto(a) a utilizar o sistema.
+Caso todos os passos acima tenham sido executados corretamente, você está apto(a) a utilizar o sistema.
 Acesse o endereço ( caso esteja executando localmente `http://localhost:3000` ) e utilize o usuário semeado anteriormente.
 `admin@admin.com.br` e senha `12345678`
 ______

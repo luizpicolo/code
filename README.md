@@ -1,36 +1,36 @@
-# C.O.D.E - Controle de ocorrências e desempenho escolar
+# C.O.D.E - Controle de ocorrências e desempenho escolar (Occurrences control and school performance.)
 
-## Sobre o sistema
+## About System
 
-Veja o hotsite para divulgação do sistema: http://sistemacode.github.io    
+See the hotsite for system dissemination.: http://sistemacode.github.io/site-code/
 
-O Controle de Ocorrências de Desempenho Escolar, C.O.D.E, é um software desenvolvido com o objetivo de controlar parte do processo de ocorrências e relatórios de desempenho escolar de forma prática e segura. Possui menus auto-explicativos e, futuramente, um manual eletrônico para o auxilo no manuseio do software, ou, para usuários mais avançados, a adaptação de novos sistemas baseados em seu código fonte.
-Sendo assim, pode-se dizer que o Sistema de Gestão de Ocorrências de Desempenho Escolar é de fácil operação e automatiza as principais rotinas envolvidas no objetivo proposto.
-Operando em ambiente web, tem visual limpo que torna a navegação simples e rápida, trabalhando em mono ou multi-usuário.
+The C.O.D.E system (Controle de Ocorrências e Desempenho Escolar - Occurrences control and school performance), It's a software developed for the purpose of controlling, in a practical and safe way, the process of occurrences and school performance reports.
+It features self-explanatory menus and in the future, an electronic manual for Aiding in software handling, or, for more advanced users, the adaptation of new systems based on its source code.
+Thus, it can be said that the C.O.D.E is easy to operate and automate the main routines involved in the proposed objective. Operating in web environment with clean look that makes it quick and easy navigation, working in mono or multi-user.
 
 ## Preview
 
-![Lista de estudantes](https://cdn.rawgit.com/sistemacode/code/master/public/screenshots/list_students.png)
+![Students List](https://cdn.rawgit.com/sistemacode/code/master/public/screenshots/list_students.png)
 
-## Instalação
+## Installation
 
-O C.O.D.E foi desenvolvido utilizando a linguagem de programação Ruby com o Framework Rails e o banco de dados PostgreSQL. Logo, para que ele seja executado, você necessita de um ambiente que contenha todos estes recursos. Se não possui, siga os passos descritos em **Criando o ambiente para a execução do C.O.D.E**. Caso já possua o ambiente necessário, siga para [**Instalando o C.O.D.E**](#id-instalando-o-code).
+The C.O.D.E was developed using the Ruby programming language with the Rails Framework and PostgreSQL database. So for it to run, you need an environment that contains all of these characteristics. If you do not, follow the steps in **Creating the environment for executing the C.O.D.E**. If you already have an environment, go to **Installing C.O.D.E**
 
-## Criando o ambiente para execução do C.O.D.E
-***(Distribuiçoes baseadas do distro Debian)***
-OBS: Existem várias formas de se criar um ambiente de execução, fique a vontade para escolher o que mais lhe é familiar.
+## Creating the environment for executing the C.O.D.E
+***(Debian-based distributions)***    
+NOTE: There are several ways to create an execution environment, feel free to choose the most convenient way for you.
 
-### Primeiramente instale o PostgreSQL
+### First, install PostgreSQL
 
     sudo apt-get install postgresql postgresql-contrib
 
-### Logo após, troque a senha do usuãrio executando os passos abaixo
+### Then, change the user's password by following the steps below
 
-    sudo su - postgres
-    psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'"
+    sudo su - postgres    
+    psql -c "ALTER USER postgres WITH PASSWORD 'new_password'"
     sudo service postgresql restart
 
-### Configurando o server Ruby
+### Configure server Ruby
 
     sudo apt-get install libcurl4-openssl-dev -y &&
     curl -L get.rvm.io | bash -s stable &&
@@ -41,51 +41,48 @@ OBS: Existem várias formas de se criar um ambiente de execução, fique a vonta
     rvm use ruby --default &&
     rvm rubygems current
 
-**Apenas para ambiente de produção**    
+**Only production environment**    
 
     gem install passenger &&
     sudo apt-get install libpq-dev &&
     rvmsudo passenger-install-nginx-module &&
     sudo update-rc.d nginx defaults
 
-<div id="id-instalando-o-code"></div>
+## Installing C.O.D.E
 
-## Instalando o C.O.D.E
-
-**Primeiro passo:** Execute o comando abaixo para clonar o repositório para a máquina que disponibilizará o sistema
+**First step:** Run the following command to clone the repository for the machine that will provide the system
 
     git clone git@github.com:luizpicolo/code.git
 
-**Segundo passo:** Em seguida, execute os próximos comandos para renomear os arquivos de configuração. Logo após, altere os dados para as configurações corretas
+**Second step:** Then run the following commands to rename the configuration files. Soon after the change data to the correct settings
 
     cp config/database.example.yml config/database.yml &&
     cp config/application.example.yml config/application.yml &&
     cp config/secrets.example.yml config/secrets.yml
 
-**Terceiro passo** Dentro do local onde o projeto foi clonado, execute os comando abaixo para migrar o banco de dados e criar o primeiro usuário do sistema
+**Third step** In the the directory where the project was cloned, run the following command to migrate the database and create the first user of the system
 
     bundle install && rake db:create && rake db:migrate
 
-Caso deseje adicionar alguns dados de testes
+If you want to add some test data
 
     rake code:seed_example_data
 
-## Teste
+## Test
 
-Para executar os testes :D
+To run the tests :D
 
     rake db:test:prepare && rspec
 
-## Coisas a fazer
+## TODO List
 
- - Internacionalização
- - Tradução do README para inglês
- - Manual acoplado ao sistema (Aberto a propostas)
+ - internationalization
+ - Manual attached to the system (open to offers)
 
-## Acesso ao sistema
+## System access
 
-Caso todos os passos acima tenham sido executados corretamente, você está apto(a) a utilizar o sistema.
-Acesse o endereço ( caso esteja executando localmente `http://localhost:3000` ) e utilize o usuário semeado anteriormente.
-`admin@admin.com.br` e senha `12345678`
+If all the steps above have been performed properly, you are able to use the system.
+Access the address (if running locally `http://localhost:3000`) and use the User sown earlier.
+`admin@admin.com.br` and password `12345678`
 ______
-Criado com <3 por Luiz Picolos 
+Created with <3 by Luiz Picolos 

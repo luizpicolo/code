@@ -1,0 +1,32 @@
+pt-BR:
+  code:
+    title: "Controle de ocorrências e desempenho escolar"
+
+    # Entity
+    user: "Usuários"
+    student: 'Estudante'
+    school_performace: 'Desempenho escolar'
+    incident: 'Ocorrência'
+    logout: 'Sair do sistema'
+    report: 'Relatório'
+    profile: 'Perfil'
+
+    form:
+      submit: "Entrar"
+      email: "E-mail"
+      password: "Senha"
+
+    link:
+      about_system: "Sobre o sistema"
+      home: "Início"
+      contributors: "Contribuidores"
+
+    message:
+      welcome: "Seja bem vindo(a): "
+      see_more: "Saiba mais »"
+      contact_admin: "Caso não possua um login, contate o administrador(a) do sistema"
+
+    text:
+      about:
+        short: "O Controle de Ocorrências de Desempenho Escolar, C.O.D.E, é um software desenvolvido com o objetivo de controlar parte do processo de ocorrências e relatórios de desempenho escolar de forma prática e segura."
+        long: "O Controle de Ocorrências de Desempenho Escolar, C.O.D.E, é um software desenvolvido com o objetivo de controlar parte do processo de ocorrências e relatórios de desempenho escolar de forma prática e segura. Possui menus auto-explicativos e, futuramente, um manual eletrônico para o auxilo no manuseio do software, ou, para usuários mais avançados, a adaptação de novos sistemas baseados em seu código fonte. Sendo assim, pode-se dizer que o Sistema de Gestão de Ocorrências de Desempenho Escolar é de fácil operação e automatiza as principais rotinas envolvidas no objetivo proposto. Operando em ambiente web, tem visual limpo que torna a navegação simples e rápida, trabalhando em mono ou multi-usuário."

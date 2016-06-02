@@ -4,9 +4,9 @@
   </p>
   <div class="jumbotron">
     <h1>C.O.D.E</h1>
-    <h2>Controle de ocorrências e desempenho escolar</h2>
-    <h4>Seja bem vindo: <%= current_user.name %></h4>
-    <p>O Sistema de Gestão de Ocorrências e Desempenho Escolar é um software desenvolvido com o objetivo de controlar todo o processo de ocorrências e relatórios de desempenho escolar de forma prática e segura...</p>
-    <a href="#" class="btn btn-primary btn-large">Saiba mais »</a>
+    <h2><%= t('code.title')%></h2>
+    <h4><%= t('code.message.welcome')%> <%= current_user.name %></h4>
+    <p><%= t('code.text.about.short') %></p>
+    <a href="#" class="btn btn-primary btn-large"><%= t('code.message.see_more')%></a>
   </div>
 </div>

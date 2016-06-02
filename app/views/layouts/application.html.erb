@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>C.O.D.E - Controle de ocorrências e desempenho escolar</title>
+  <title>C.O.D.E - <%= t('code.title')%></title>
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -31,9 +31,9 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><%= link_to 'Início', root_path %></li>
-          <li><%= link_to 'Sobre o sistema', about_path %></li>
-          <li><a href="#contact">Contribuidores</a></li>
+          <li><%= link_to t('code.link.home'), root_path %></li>
+          <li><%= link_to t('code.link.about_system'), about_path %></li>
+          <li><%= link_to t('code.link.contributors'), '#contact'%></li>
         </ul>
       </div>
     </div>
@@ -42,18 +42,18 @@
     <div class="col-md-3 sidebar-offcanvas" id="sidebar">
       <div class="list-group">
         <% if current_user.admin? %>
-        <%= link_to 'Estudantes', students_path, class: "list-group-item" %>
+        <%= link_to t('code.student'), students_path, class: "list-group-item" %>
         <% end %>
-        <%= link_to 'Desempenho escolar', school_performaces_path, class: "list-group-item" %>
-        <%= link_to 'Ocorrências', incidents_path, class: "list-group-item" %>
+        <%= link_to t('code.school_performace'), school_performaces_path, class: "list-group-item" %>
+        <%= link_to t('code.incident'), incidents_path, class: "list-group-item" %>
         <% if current_user.admin? %>
-        <%= link_to 'Relatórios', report_path, class: "list-group-item" %>
+        <%= link_to t('code.report'), report_path, class: "list-group-item" %>
         <% end %>
-        <%= link_to 'Perfil', "/perfil", class: "list-group-item"%>
+        <%= link_to t('code.profile'), "/perfil", class: "list-group-item"%>
         <% if current_user.admin? %>
-        <%= link_to 'Usuários', users_path, class: "list-group-item" %>
+        <%= link_to t('code.user'), users_path, class: "list-group-item" %>
         <% end %>
-        <%= link_to 'Sair do sistema', destroy_user_session_path, :method => :delete, class: "list-group-item" %>
+        <%= link_to t('code.logout'), destroy_user_session_path, :method => :delete, class: "list-group-item" %>
       </div>
     </div>
     <div class="col-md-9">
@@ -62,7 +62,7 @@
     </div>
     <hr>
     <footer class="col-md-12">
-      <p>C.O.D.E - Controle de ocorrências e desempenho escolar - 2015</p>
+      <p>C.O.D.E - <%= t('code.title') %> - 2015</p>
     </footer>
   </div>
 </body>

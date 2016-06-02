@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>C.O.D.E - Controle de ocorrências e desempenho escolar</title>
+  <title>C.O.D.E - <%= t('code.title') %></title>
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -25,18 +25,16 @@
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin"}) do |f| %>
         <div class="text-center"><%= image_tag 'code.png', width: 120 %></div>
         <h1 class="form-signin-heading text-center">C.O.D.E</h1>
-        <p class="text-center">
-          Controle de ocorrências e desempenho escolar
-        </p>
+        <p class="text-center"><%= t('code.title') %></p>
         <%= f.label :email, class: "sr-only" %>
-        <%= f.email_field :email, class: "form-control", placeholder: 'Email' %>
+        <%= f.email_field :email, class: "form-control", placeholder: t('code.form.email') %>
         <%= f.label :password, class: "sr-only" %>
-        <%= f.password_field :password, class: "form-control", placeholder: 'Senha'%>
-        <%= f.submit "Entrar", class: "btn btn-primary"%>
+        <%= f.password_field :password, class: "form-control", placeholder: t('code.form.password') %>
+        <%= f.submit t('code.form.submit'), class: "btn btn-primary"%>
       <% end %>
     </div>
     <p class="text-center">
-      Caso não possua um login, contate o administrador(a) do sistema
+      <%= t('code.message.contact_admin') %>
     </p>
   </body>
 </html>

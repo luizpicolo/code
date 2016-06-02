@@ -83,7 +83,6 @@ Para executar os testes :D
 ## Coisas a fazer
 
  - Internacionalização
- - Tradução do README para inglês
  - Manual acoplado ao sistema (Aberto a propostas)
 
 ## Acesso ao sistema

@@ -28,7 +28,7 @@ OBS: Existem várias formas de se criar um ambiente de execução, fique a vonta
 
     sudo apt-get install postgresql postgresql-contrib
 
-### Logo após, troque a senha do usuãrio executando os passos abaixo
+### Logo após, troque a senha do usuário executando os passos abaixo
 
     sudo su - postgres
     psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'"

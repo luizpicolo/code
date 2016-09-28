@@ -1,4 +1,4 @@
-[Read this document in Inglish](https://github.com/sistemacode/code/blob/master/README_EN.md)
+[Read this document in English](https://github.com/sistemacode/code/blob/master/README_EN.md)
 
 ---
 
@@ -6,7 +6,7 @@
 
 ## Sobre o sistema
 
-Veja o hotsite para divulgação do sistema: http://sistemacode.github.io    
+Veja o hotsite para divulgação do sistema: http://sistemacode.github.io
 
 O Controle de Ocorrências de Desempenho Escolar, C.O.D.E, é um software desenvolvido com o objetivo de controlar parte do processo de ocorrências e relatórios de desempenho escolar de forma prática e segura. Possui menus auto-explicativos e, futuramente, um manual eletrônico para o auxilo no manuseio do software, ou, para usuários mais avançados, a adaptação de novos sistemas baseados em seu código fonte.
 Sendo assim, pode-se dizer que o Sistema de Gestão de Ocorrências de Desempenho Escolar é de fácil operação e automatiza as principais rotinas envolvidas no objetivo proposto.
@@ -45,7 +45,7 @@ OBS: Existem várias formas de se criar um ambiente de execução, fique a vonta
     rvm use ruby --default &&
     rvm rubygems current
 
-**Apenas para ambiente de produção**    
+**Apenas para ambiente de produção**
 
     gem install passenger &&
     sudo apt-get install libpq-dev &&
@@ -62,9 +62,9 @@ OBS: Existem várias formas de se criar um ambiente de execução, fique a vonta
 
 **Segundo passo:** Em seguida, execute os próximos comandos para renomear os arquivos de configuração. Logo após, altere os dados para as configurações corretas
 
-    cp config/database.example.yml config/database.yml &&
-    cp config/application.example.yml config/application.yml &&
-    cp config/secrets.example.yml config/secrets.yml
+    cp config/database.yml.example config/database.yml &&
+    cp config/application.yml.example config/application.yml &&
+    cp config/secrets.yml.example config/secrets.yml
 
 **Terceiro passo** Dentro do local onde o projeto foi clonado, execute os comando abaixo para migrar o banco de dados e criar o primeiro usuário do sistema
 

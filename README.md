@@ -62,9 +62,9 @@ OBS: Existem várias formas de se criar um ambiente de execução, fique a vonta
 
 **Segundo passo:** Em seguida, execute os próximos comandos para renomear os arquivos de configuração. Logo após, altere os dados para as configurações corretas
 
-    cp config/database.example.yml config/database.yml &&
-    cp config/application.example.yml config/application.yml &&
-    cp config/secrets.example.yml config/secrets.yml
+    cp config/database.yml.example config/database.yml &&
+    cp config/application.yml.example config/application.yml &&
+    cp config/secrets.yml.example config/secrets.yml
 
 **Terceiro passo** Dentro do local onde o projeto foi clonado, execute os comando abaixo para migrar o banco de dados e criar o primeiro usuário do sistema
 

@@ -56,9 +56,9 @@ NOTE: There are several ways to create an execution environment, feel free to ch
 
 **Second step:** Then run the following commands to rename the configuration files. Soon after the change data to the correct settings
 
-    cp config/database.example.yml config/database.yml &&
-    cp config/application.example.yml config/application.yml &&
-    cp config/secrets.example.yml config/secrets.yml
+    cp config/database.yml.example config/database.yml &&
+    cp config/application.yml.example config/application.yml &&
+    cp config/secrets.yml.example config/secrets.yml
 
 **Third step** In the the directory where the project was cloned, run the following command to migrate the database and create the first user of the system
 

@@ -17,7 +17,7 @@ Thus, it can be said that the C.O.D.E is easy to operate and automate the main r
 The C.O.D.E was developed using the Ruby programming language with the Rails Framework and PostgreSQL database. So for it to run, you need an environment that contains all of these characteristics. If you do not, follow the steps in **Creating the environment for executing the C.O.D.E**. If you already have an environment, go to **Installing C.O.D.E**
 
 ## Creating the environment for executing the C.O.D.E
-***(Debian-based distributions)***    
+***(Debian-based distributions)***
 NOTE: There are several ways to create an execution environment, feel free to choose the most convenient way for you.
 
 ### First, install PostgreSQL
@@ -26,7 +26,7 @@ NOTE: There are several ways to create an execution environment, feel free to ch
 
 ### Then, change the user's password by following the steps below
 
-    sudo su - postgres    
+    sudo su - postgres
     psql -c "ALTER USER postgres WITH PASSWORD 'new_password'"
     sudo service postgresql restart
 
@@ -41,7 +41,7 @@ NOTE: There are several ways to create an execution environment, feel free to ch
     rvm use ruby --default &&
     rvm rubygems current
 
-**Only production environment**    
+**Only production environment**
 
     gem install passenger &&
     sudo apt-get install libpq-dev &&
@@ -85,4 +85,4 @@ If all the steps above have been performed properly, you are able to use the sys
 Access the address (if running locally `http://localhost:3000`) and use the User sown earlier.
 `admin@admin.com.br` and password `12345678`
 ______
-Created with <3 by Luiz Picolos 
+Created with <3 by Luiz Picolos

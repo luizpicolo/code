@@ -22,6 +22,10 @@ class SchoolPerformace < ActiveRecord::Base
     finish_date.try(:strftime, '%d/%m/%Y')
   end
 
+  def value_form
+    student.id.to_s + ' - ' + student.name if student.present?
+  end
+
   def self.report(student, start_date, finish_date)
     where('student_id = ?', student.to_i).where('start_date >= ?', start_date)
       .where('finish_date <= ?', finish_date)

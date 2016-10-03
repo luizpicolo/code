@@ -8,8 +8,16 @@ require 'email_spec'
 require 'capybara/rspec'
 require 'capybara/rails'
 require 'devise'
+require 'shoulda-matchers'
 
 Capybara.javascript_driver = :selenium
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
 
 # externals
 require 'simplecov'

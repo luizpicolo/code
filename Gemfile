@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
+ruby '2.3.1'
 
-ruby '2.2.1'
 
 gem 'alert_message'
 gem 'bootstrap-sass', '~> 3.3.3'
@@ -46,9 +46,9 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'mina'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.4'
   gem 'selenium-webdriver'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers', '~> 3.0', require: false
   gem 'spring'
   gem 'simplecov', require: false
 end

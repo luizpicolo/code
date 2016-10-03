@@ -8,4 +8,8 @@ FactoryGirl.define do
     admin true
     status true
   end
+
+  factory :confirmed_user, parent: :user do
+    after(:create) { |user| user.confirm! }
+  end
 end

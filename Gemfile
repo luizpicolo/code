@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
 
+ruby '2.3.1'
 
 gem 'alert_message'
 gem 'bootstrap-sass', '~> 3.3.3'

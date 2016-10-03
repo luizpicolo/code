@@ -48,7 +48,7 @@ group :development, :test do
   gem 'mina'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', require: false
   gem 'spring'
   gem 'simplecov', require: false
 end

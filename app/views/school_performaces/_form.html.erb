@@ -3,7 +3,7 @@
   <div class="form-group">
     <%= f.label :student, 'Estudante', class: "col-sm-2 control-label" %>
     <div class="col-sm-5">
-      <%= f.autocomplete_field :student_id, autocomplete_student_name_school_performaces_path, class: "form-control", value: @school_performace.student.id.to_s + ' - ' + @school_performace.student.name %>
+      <%= f.autocomplete_field :student_id, autocomplete_student_name_school_performaces_path, class: "form-control", value: @school_performace.value_form %>
     </div>
   </div>
   <div class="form-group">

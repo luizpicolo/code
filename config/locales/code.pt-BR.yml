@@ -4,7 +4,7 @@ pt-BR:
 
     # Entity
     user: "Usuários"
-    student: 'Estudante'
+    student: 'Estudantes'
     school_performace: 'Desempenho escolar'
     incident: 'Ocorrência'
     logout: 'Sair do sistema'

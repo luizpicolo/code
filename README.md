@@ -2,6 +2,8 @@
 
 ---
 
+[![Build Status](https://travis-ci.org/sistemacode/code.svg?branch=FixedSpecs)](https://travis-ci.org/sistemacode/code)
+
 # C.O.D.E - Controle de ocorrências e desempenho escolar
 
 ## Sobre o sistema

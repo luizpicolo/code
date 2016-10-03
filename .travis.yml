@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+  - 2.2.1
+
+before_install: gem install bundler -v 1.11.2
+before_script:
+  - cp config/application.yml.example config/application.yml
+  - cp config/database.yml.example config/database.yml
+  - cp config/secrets.yml.examples config/secrets.yml
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+notifications:
+  email:
+    - luizpicolo@gmail.com

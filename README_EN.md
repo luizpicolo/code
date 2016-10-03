@@ -1,5 +1,7 @@
 # C.O.D.E - Controle de ocorrências e desempenho escolar (Occurrences control and school performance.)
 
+[![Build Status](https://travis-ci.org/sistemacode/code.svg?branch=FixedSpecs)](https://travis-ci.org/sistemacode/code)
+
 ## About System
 
 See the hotsite for system dissemination.: http://sistemacode.github.io/site-code/

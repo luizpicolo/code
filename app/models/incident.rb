@@ -1,5 +1,5 @@
 # Class
-class Incident < ActiveRecord::Base
+class Incident < ApplicationRecord
   include SearchCop
 
   search_scope :search do

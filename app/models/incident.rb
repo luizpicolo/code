@@ -17,6 +17,10 @@ class Incident < ApplicationRecord
   belongs_to :student, inverse_of: :incidents
   belongs_to :user, inverse_of: :incidents
 
+  def value_form
+    student.id.to_s + ' - ' + student.name if student.present?
+  end
+
   def date_insident_format
     date_incident.try(:strftime, '%d/%m/%Y')
   end

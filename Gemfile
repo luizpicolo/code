@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
+gem 'rails', '5.0.0'
 gem 'alert_message'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'bootstrap-generators', git: 'git://github.com/decioferreira/bootstrap-generators.git'
@@ -23,7 +24,6 @@ gem 'jquery-ui-rails'
 gem 'mini_magick'
 gem 'modernizr-rails'
 gem 'pdfkit'
-gem 'rails', '4.2.1'
 gem 'rails-i18n'
 gem 'rails-env'
 gem 'randumb'
@@ -35,12 +35,14 @@ gem 'sprockets-rails', github: 'rails/sprockets-rails'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'wkhtmltopdf-binary'
+gem 'record_tag_helper', '~> 1.0'
+
 
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rails_db_info'
-  gem 'capybara'
+  gem 'capybara', github: 'jnicklas/capybara'
   gem 'email_spec'
   gem 'database_rewinder'
   gem 'factory_girl_rails'
@@ -50,7 +52,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 3.0', require: false
   gem 'spring'
-  gem 'simplecov', require: false
+  gem 'simplecov',            '0.11.1', require: false
 end
 
 group :staging, :production do

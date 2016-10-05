@@ -1,4 +1,4 @@
-class SchoolPerformace < ActiveRecord::Base
+class SchoolPerformace < ApplicationRecord
   include SearchCop
 
   search_scope :search do

@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -24,10 +23,9 @@ ActiveRecord::Schema.define(version: 20150609014114) do
     t.text     "soluction"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["student_id"], name: "index_incidents_on_student_id", using: :btree
+    t.index ["user_id"], name: "index_incidents_on_user_id", using: :btree
   end
-
-  add_index "incidents", ["student_id"], name: "index_incidents_on_student_id", using: :btree
-  add_index "incidents", ["user_id"], name: "index_incidents_on_user_id", using: :btree
 
   create_table "school_performaces", force: :cascade do |t|
     t.integer  "student_id"
@@ -37,10 +35,9 @@ ActiveRecord::Schema.define(version: 20150609014114) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["student_id"], name: "index_school_performaces_on_student_id", using: :btree
+    t.index ["user_id"], name: "index_school_performaces_on_user_id", using: :btree
   end
-
-  add_index "school_performaces", ["student_id"], name: "index_school_performaces_on_student_id", using: :btree
-  add_index "school_performaces", ["user_id"], name: "index_school_performaces_on_user_id", using: :btree
 
   create_table "students", force: :cascade do |t|
     t.string   "name"
@@ -69,10 +66,9 @@ ActiveRecord::Schema.define(version: 20150609014114) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.index ["email"], name: "index_users_on_email", using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
 
   add_foreign_key "incidents", "students"
   add_foreign_key "incidents", "users"

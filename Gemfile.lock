@@ -1,30 +1,9 @@
 GIT
-  remote: git://github.com/decioferreira/bootstrap-generators.git
+  remote: https://github.com/decioferreira/bootstrap-generators.git
   revision: 52c1ef289380f27904dc66897cf34aa86659faf0
   specs:
     bootstrap-generators (3.3.4)
       railties (>= 3.1.0)
-
-GIT
-  remote: git://github.com/jnicklas/capybara.git
-  revision: 06a8aa7c050af992ccf145354d609338a3f12fcd
-  specs:
-    capybara (2.9.2)
-      addressable
-      mime-types (>= 1.16)
-      nokogiri (>= 1.3.3)
-      rack (>= 1.0.0)
-      rack-test (>= 0.5.4)
-      xpath (~> 2.0)
-
-GIT
-  remote: git://github.com/rails/sprockets-rails.git
-  revision: 45b6b849e7d586936a13d92634df64c680623a71
-  specs:
-    sprockets-rails (3.2.0)
-      actionpack (>= 4.0)
-      activesupport (>= 4.0)
-      sprockets (>= 3.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -88,6 +67,13 @@ GEM
       railties (>= 3.0)
     builder (3.2.2)
     cancancan (1.15.0)
+    capybara (2.10.1)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     carrierwave (0.11.2)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -278,6 +264,10 @@ GEM
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
+    sprockets-rails (3.2.0)
+      actionpack (>= 4.0)
+      activesupport (>= 4.0)
+      sprockets (>= 3.0.0)
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
@@ -315,7 +305,7 @@ DEPENDENCIES
   bootstrap-wysihtml5-rails
   bootstrap-wysihtml5-rails-font-awesome (~> 0.3.1.25)
   cancancan
-  capybara!
+  capybara
   carrierwave
   coffee-rails (~> 4.1.0)
   database_rewinder
@@ -353,7 +343,7 @@ DEPENDENCIES
   shoulda-matchers (~> 3.0)
   simplecov (= 0.11.1)
   spring
-  sprockets-rails!
+  sprockets-rails
   therubyracer
   turbolinks
   uglifier (>= 1.3.0)

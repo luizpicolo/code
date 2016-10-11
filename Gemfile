@@ -49,6 +49,7 @@ group :development, :test do
   gem 'faker'
   gem 'mina'
   gem 'rspec-rails', '~> 3.4'
+  gem 'rails-controller-testing'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 3.0', require: false
   gem 'spring'

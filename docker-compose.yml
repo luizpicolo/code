@@ -1,0 +1,11 @@
+version: '2'
+services:
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: code_dev
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+

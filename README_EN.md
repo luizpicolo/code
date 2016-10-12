@@ -29,7 +29,7 @@ NOTE: There are several ways to create an execution environment, feel free to ch
 Or you can use Docker for your development environment
 For that:
 
-- Install Docker
+- Install Docker (details in how install Docker you can check [here](https://docs.docker.com/engine/installation/))
 - after just run
 
     ```Bash

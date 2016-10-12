@@ -33,7 +33,7 @@ OBS: Existem várias formas de se criar um ambiente de execução, fique a vonta
 
 Ou se quiser, poder usar Docker para ter o banco de dados instalado para o seu ambiente de desenvolvimento, para isso:
 
-- Primeiro instale Docker
+- Primeiro instale Docker (para saber com instalar Docker consulte [aqui](https://docs.docker.com/engine/installation/))
 - Após, rode:
 
     ```Bash

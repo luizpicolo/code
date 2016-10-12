@@ -26,6 +26,16 @@ NOTE: There are several ways to create an execution environment, feel free to ch
 
     sudo apt-get install postgresql postgresql-contrib
 
+Or you can use Docker for your development environment
+For that:
+
+- Install Docker (details in how install Docker you can check [here](https://docs.docker.com/engine/installation/))
+- after just run
+
+    ```Bash
+    $ docker-compose up
+    ```
+
 ### Then, change the user's password by following the steps below
 
     sudo su - postgres

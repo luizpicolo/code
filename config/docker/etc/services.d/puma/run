@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv sh
+cd /app
+
+# Copy this files again if we are running with /app from hostmachine
+cp config/docker/app/config/*.yml config/
+
+# Run everything
+bundle install && rake db:migrate && rake db:seed && rake assets:precompile && puma

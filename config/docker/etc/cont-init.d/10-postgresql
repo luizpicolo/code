@@ -1,0 +1,17 @@
+#!/usr/bin/with-contenv sh
+if [ "$PGHOST" = "localhost" ]; then
+  if [ ! -d /var/lib/postgresql/9.4/main ]; then
+    cp /etc/postgresql/9.4/main/pg_hba.conf /tmp/pg_hba.conf
+    pg_dropcluster 9.4 main
+    pg_createcluster --start 9.4 main
+    mv /tmp/pg_hba.conf /etc/postgresql/9.4/main/pg_hba.conf
+
+    /etc/init.d/postgresql restart
+  else
+    /etc/init.d/postgresql start
+  fi
+
+  su postgres -c "psql -c \"CREATE USER $PGUSERNAME WITH PASSWORD '$PGPASSWORD' NOSUPERUSER NOCREATEDB NOCREATEROLE INHERIT LOGIN;\""
+  su postgres -c "psql -c \"CREATE DATABASE $PGDBNAME WITH OWNER = $PGUSERNAME TEMPLATE = template0 ENCODING = 'UNICODE';\""
+  su postgres -c "psql -c \"CREATE DATABASE $PGTESTDBNAME WITH OWNER = $PGUSERNAME TEMPLATE = template0 ENCODING = 'UNICODE';\""
+fi

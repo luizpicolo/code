@@ -1,0 +1,21 @@
+default: &default
+  host: <%= ENV['PGHOST'] %>
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV['PGDBNAME'] %>
+  pool: 5
+  username: <%= ENV['PGUSERNAME'] %>
+  password: <%= ENV['PGPASSWORD'] %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  database: <%= ENV['PGTESTDBNAME'] %>
+
+staging:
+  <<: *default
+
+production:
+  <<: *default

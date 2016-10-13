@@ -6,12 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-p 'First user'
+puts 'Creating first admin if none...'
 User.new({
-  :name => 'Admin',
-  :email => 'admin@admin.com.br',
-  :password => '12345678',
-  :password_confirmation => '12345678',
-  :admin => true,
-  :status => true
-}).save
+  name: 'Admin',
+  email: 'admin@admin.com.br',
+  password: '12345678',
+  password_confirmation: '12345678',
+  admin: true,
+  status: true
+}).save if User.where(admin: true).empty?

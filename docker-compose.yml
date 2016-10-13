@@ -1,11 +1,13 @@
 version: '2'
 services:
-  postgres:
-    image: postgres
-    ports:
-      - "5432:5432"
+  code:
+    build: .
+    image: sistemacode/code
     environment:
-      POSTGRES_DB: code_dev
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-
+      RAILS_ENV: development
+      PGDBNAME: code_development
+    volumes:
+      - .:/app
+      - ./db/data:/var/lib/postgresql
+    ports:
+      - "8080:80"

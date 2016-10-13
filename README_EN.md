@@ -80,6 +80,14 @@ If you want to add some test data
 
     rake code:seed_example_data
 
+## Using C.O.D.E on docker
+
+To run through Docker
+
+    docker run sistemacode/code -p 8080:80 -v /host_machine_path/var/lib/postgresql:/var/lib/postgresql
+
+Where "8080" is the port to listen, and "/host_machine_path" is the path on the host machine where to store the database data.
+
 ## Test
 
 To run the tests :D

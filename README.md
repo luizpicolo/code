@@ -20,9 +20,60 @@ Operando em ambiente web, tem visual limpo que torna a navegação simples e rá
 
 ## Instalação
 
-O C.O.D.E foi desenvolvido utilizando a linguagem de programação Ruby com o Framework Rails e o banco de dados PostgreSQL. Logo, para que ele seja executado, você necessita de um ambiente que contenha todos estes recursos. Se não possui, siga os passos descritos em **Criando o ambiente para a execução do C.O.D.E**. Caso já possua o ambiente necessário, siga para [**Instalando o C.O.D.E**](#id-instalando-o-code).
+O C.O.D.E foi desenvolvido utilizando a linguagem de programação Ruby com o Framework Rails e o banco de dados PostgreSQL. Logo, para que ele seja executado, você necessita de um ambiente que contenha todos estes recursos. A forma mais rápida para subir o ambiente é através do [**Docker**](#instalando-o-code-com-docker). Caso queira configurar o ambiente em sua máquina sem o Docker, siga os passos descritos em **Criando o ambiente para a execução do C.O.D.E**. Caso já possua o ambiente necessário, siga para [**Instalando o C.O.D.E**](#id-instalando-o-code-sem-docker).
 
-## Criando o ambiente para execução do C.O.D.E
+## Instalando o C.O.D.E com Docker
+
+**Pré-requisito**: Instale o docker(1.12+) e o docker-compose(1.6+)
+
+A instalação e execução do container via Docker é automatizada através de dois arquivos:
+
+* [scripts/setup](scripts/setup): Gera o build das imagens utilizadas pelos containers.
+* [scripts/development](scripts/development): Oferece serviços para subir e desligar os containers, além de permitir a execução de comandos.
+
+Siga os passos abaixo para executar o ambiente de desenvolvimento:
+
+**Primeiro passo:** Execute o comando abaixo para clonar o repositório para a máquina que disponibilizará o sistema
+
+    git clone git@github.com:luizpicolo/code.git
+
+**Segundo passo:** Em seguida, execute os próximos comandos para renomear os arquivos de configuração. Logo após, altere os dados para as configurações corretas dos arquivos **application.yml** e **secrets.yml**
+
+    cp config/database.yml.example config/database.yml &&
+    cp config/application.yml.example config/application.yml &&
+    cp config/secrets.yml.example config/secrets.yml
+
+**Terceiro passo:** Dentro do local onde o projeto foi clonado, execute o seguinte script para fazer o *build* dos containers:
+
+    ./scripts/setup
+
+
+**Quarto passo:** Dentro do local onde o projeto foi clonado, há as seguintes opções para manipulação do container:
+
+* Iniciar os containers: `./scripts/development start`
+* Desligar os containers: `./scripts/development stop`
+* Executar comandos no container do C.O.D.E **ligado**: `./scripts/development exec code <command>`
+
+Caso deseje adicionar alguns dados de testes
+
+    ./scripts/development exec code rake code:seed_example_data
+
+**Quinto passo:** Execute os testes no container:
+
+    ./scripts/development exec code rake db:test:prepare && ./scripts/development exec code rspec 
+
+**Observações**
+
+* Você pode desenvolver o projeto normalmente. Não é necessário desligar e ligar os containers ao realizar alterações no código. Essas alterações são aplicadas ao containner em execução.
+* Caso tenha adicionado uma nova gem ao `Gemfile`, basta usar o bundler no container em execução:
+
+    `./scripts/development exec code bundle install`
+
+* Da mesma forma, caso tenha adicionado uma nova *migation*, basta aplicá-la ao container em execução:
+
+    `./scripts/development exec code rake db:migrate`
+
+## Criando o ambiente para execução do C.O.D.E sem Docker
 ***(Distribuiçoes baseadas do distro Debian)***
 OBS: Existem várias formas de se criar um ambiente de execução, fique a vontade para escolher o que mais lhe é familiar.
 
@@ -37,7 +88,7 @@ Ou se quiser, poder usar Docker para ter o banco de dados instalado para o seu a
 - Após, rode:
 
     ```Bash
-    $ docker-compose up
+    $ docker-compose up postgres
     ```
 
 ### Logo após, troque a senha do usuário executando os passos abaixo
@@ -64,9 +115,7 @@ Ou se quiser, poder usar Docker para ter o banco de dados instalado para o seu a
     rvmsudo passenger-install-nginx-module &&
     sudo update-rc.d nginx defaults
 
-<div id="id-instalando-o-code"></div>
-
-## Instalando o C.O.D.E
+### Instalando o C.O.D.E
 
 **Primeiro passo:** Execute o comando abaixo para clonar o repositório para a máquina que disponibilizará o sistema
 
@@ -86,7 +135,7 @@ Caso deseje adicionar alguns dados de testes
 
     rake code:seed_example_data
 
-## Teste
+### Teste
 
 Para executar os testes :D
 

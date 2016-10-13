@@ -1,0 +1,74 @@
+#!/bin/sh
+
+FILE_DIR=`perl -e 'use Cwd "abs_path";print abs_path(shift)' $0`
+BASE_DIR=`dirname $FILE_DIR`/..
+
+PROJECT_NAME="code"
+
+CYAN='\033[0;36m'
+NC='\033[0m'
+RED='\033[0;31m'
+
+verify () {
+  if [ $? != 0 ]; then
+    echo "${RED}$1${NC}"
+    exit 2
+  fi
+}
+
+if [ "$1" = "start" ]; then
+  echo "${CYAN}"
+  echo "Starting service $PROJECT_NAME"
+  echo "${NC}"
+
+  sudo docker-compose up -d 
+  verify "Cannot run the container. For more information take a look in docker's log"
+
+  # this always update a database.yml 
+  cp $BASE_DIR/config/database.yml.docker $BASE_DIR/config/database.yml
+
+  # this should verify weather the database exists
+  sudo docker-compose exec $PROJECT_NAME rake db:create
+  verify "Cannot create database."
+
+  sudo docker-compose exec $PROJECT_NAME rake db:migrate
+  verify "Cannot migrate database."
+
+  echo "${CYAN}"
+  echo "############################################################"
+  echo "     To execute commands in container you must run"
+  echo "     $ scripts/development exec <service> <command>"
+  echo "############################################################"
+  echo "${NC}"
+fi
+
+if [ "$1" = "stop" ]; then
+  echo "${CYAN}"
+  echo "Stopping service $PROJECT_NAME"
+  echo "${NC}"
+
+  sudo docker-compose stop
+  verify "You have some issue when we try to stop the container. Verify it manually"
+
+  echo "${CYAN}"
+  echo "####################################"
+  echo "     The container is stopped."
+  echo "####################################"
+  echo "${NC}"
+fi
+
+if [ "$1" = "exec" ]; then
+  echo "${CYAN}"
+  echo "Executing command into the container's work directory"
+  echo "${NC}"
+
+  shift
+  command="sudo docker-compose exec"
+ 
+  for word in $@; do
+     command="$command $word"
+  done
+
+  $command
+  verify "Cannot execute command into the container. Please verify logs"
+fi

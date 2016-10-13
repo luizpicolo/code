@@ -3,10 +3,11 @@ services:
   postgres:
     image: postgres
     ports:
-      - "5432:5432"
+      - "54322:5432"
     environment:
       POSTGRES_DB: code_dev
       POSTGRES_USER: postgres
+      POSTGRES_PORT: '54322'
       POSTGRES_PASSWORD: postgres
   code:
     build: .
@@ -20,5 +21,5 @@ services:
     environment:
       DATABASE_URL: postgres
       DATABASE_USERNAME: postgres
+      DATABASE_PORT: '54322'
       DATABASE_PASSWORD: postgres
-

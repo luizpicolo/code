@@ -37,7 +37,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'wkhtmltopdf-binary'
 gem 'record_tag_helper', '~> 1.0'
 
-
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'

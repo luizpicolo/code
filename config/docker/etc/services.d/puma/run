@@ -1,0 +1,2 @@
+#!/usr/bin/with-contenv sh
+cd /app && rake db:migrate && rake db:seed && rake assets:precompile && puma

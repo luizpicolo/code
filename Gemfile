@@ -58,5 +58,5 @@ end
 group :staging, :production do
   gem 'passenger'
   gem 'pg'
-  gem 'therubyracer'
+  gem 'mini_racer'
 end

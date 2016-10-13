@@ -8,4 +8,17 @@ services:
       POSTGRES_DB: code_dev
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+  code:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/code
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgres
 

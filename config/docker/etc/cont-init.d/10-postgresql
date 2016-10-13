@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv sh
+/etc/init.d/postgresql start
+su postgres -c "psql -c \"CREATE USER code WITH PASSWORD 'code' NOSUPERUSER NOCREATEDB NOCREATEROLE INHERIT LOGIN;\""
+su postgres -c "psql -c \"CREATE DATABASE code_production WITH OWNER = code TEMPLATE = template0 ENCODING = 'UNICODE';\""

@@ -1,37 +1,37 @@
 <%= form_for(@user, html: { class: "form-horizontal", role: "form" }) do |f| %>
   <br />
   <div class="form-group">
-    <%= f.label :name, 'Nome', class: "col-sm-2 control-label" %>
+    <%= f.label :name, t('code.profile.name'), class: "col-sm-2 control-label" %>
     <div class="col-sm-5">
       <%= f.text_field :name, class: "form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :email, 'Email', class: "col-sm-2 control-label" %>
+    <%= f.label :email, t('code.profile.email'), class: "col-sm-2 control-label" %>
     <div class="col-sm-5">
       <%= f.email_field :email, class: "form-control" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :password, 'Senha', class: "col-sm-2 control-label" %>
+    <%= f.label :password, t('code.profile.password'), class: "col-sm-2 control-label" %>
     <div class="col-sm-5">
       <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :password_confirmation, 'Confirmar senha', class: "col-sm-2 control-label" %>
+    <%= f.label :password_confirmation, t('code.profile.password_confirmation'), class: "col-sm-2 control-label" %>
     <div class="col-sm-5">
       <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :admin, 'Admin', class: "col-sm-2 control-label" %>
+    <%= f.label :admin, t('code.profile.admin'), class: "col-sm-2 control-label" %>
     <div class="col-sm-10 margin-top">
       <%= f.check_box :admin %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :status, 'Ativo', class: "col-sm-2 control-label" %>
+    <%= f.label :status, t('code.profile.active'), class: "col-sm-2 control-label" %>
     <div class="col-sm-10 margin-top">
       <%= f.check_box :status %>
     </div>

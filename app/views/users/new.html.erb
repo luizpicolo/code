@@ -1,8 +1,8 @@
 <div class="subtitle-list page-header">
   <%= link_to users_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+    <span class="glyphicon glyphicon-arrow-left"></span> <%t('code.buttons.back')%>
   <% end %>
-  <h1>Novo usuário</h1>
+  <h1><%= t('code.profile.new_user') %></h1>
 </div>
 
 <%= render 'form' %>

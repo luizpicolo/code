@@ -9,7 +9,26 @@ pt-BR:
     incident: 'Ocorrência'
     logout: 'Sair do sistema'
     report: 'Relatório'
-    profile: 'Perfil'
+    profile:
+      title: "Perfil"
+      list_users: "Lista de usuários"
+      edit_users: "Editar usuários"
+      new_user: "Novo usuário"
+      show_user: "Visualizar usuário"
+      name: "Nome"
+      email: "Email"
+      password: "Senha"
+      password_confirmation: "Confirmar senha"
+      admin: "Admin"
+      status: "Status"
+      active: "Ativo"
+
+    buttons:
+      back: "Voltar"
+      show: "Visualizar"
+      edit: "Editar"
+      destroy: "Excluir"
+      search: "Buscar"
 
     form:
       submit: "Entrar"

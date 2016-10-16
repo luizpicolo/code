@@ -1,17 +1,17 @@
 <div class="subtitle-list page-header">
   <%= link_to new_user_path, class: 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-plus"></span>
-    Novo usuário
+    <%= t('code.profile.new_user') %>
   <% end %>
-  <h1>Lista de usuários</h1>
+  <h1><%= t('code.profile.list_users') %></h1>
 </div>
 
 <div class="text-right">
   <form class="navbar-form" role="search">
     <div class="form-group">
-      <input name="search" type="text" value="<%= params[:search] %>"class="form-control" placeholder="Buscar">
+      <input name="search" type="text" value="<%= params[:search] %>"class="form-control" placeholder="<%= t('code.buttons.search') %>">
     </div>
-    <button type="submit" class="btn btn-primary">Buscar</button>
+    <button type="submit" class="btn btn-primary"><%= t('code.buttons.search') %></button>
   </form>
 </div>
 
@@ -48,9 +48,9 @@
           <% end %>
         </td>
         <td class="text-center">
-          <%= link_to 'Visualizar', user, class: "btn btn-primary btn-xs" %>
-          <%= link_to 'Editar', edit_user_path(user), class: "btn btn-primary btn-xs"%>
-          <%= link_to 'Excluir', user, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, class: "btn btn-danger btn-xs" %>
+          <%= link_to t('code.buttons.show'), user, class: "btn btn-primary btn-xs" %>
+          <%= link_to t('code.buttons.edit'), edit_user_path(user), class: "btn btn-primary btn-xs"%>
+          <%= link_to t('code.buttons.destroy'), user, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, class: "btn btn-danger btn-xs" %>
         </td>
       <% end %>
     </tbody>

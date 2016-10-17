@@ -13,4 +13,12 @@ RSpec.describe Student, type: :model do
     it { should have_many(:school_performaces) }
     it { should have_many(:incidents) }
   end
+
+  describe '#show_name' do
+    subject(:student){ FactoryGirl.create(:student) }
+    it 'shows id and name' do
+      output = student.id.to_s + ' - ' + student.name
+      expect(student.show_name).to eq(output)
+    end
+  end
 end

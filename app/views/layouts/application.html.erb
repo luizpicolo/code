@@ -49,7 +49,7 @@
         <% if current_user.admin? %>
         <%= link_to t('code.report'), report_path, class: "list-group-item" %>
         <% end %>
-        <%= link_to t('code.profile'), "/perfil", class: "list-group-item"%>
+        <%= link_to t('code.profile.title'), "/perfil", class: "list-group-item"%>
         <% if current_user.admin? %>
         <%= link_to t('code.user'), users_path, class: "list-group-item" %>
         <% end %>

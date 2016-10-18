@@ -2,7 +2,7 @@ namespace :code do
   desc "Seed example data for C.O.D.E"
   task seed_example_data: :environment do
     p 'seed students'
-    for i in (1..100)
+    100.times do
       Student.new({
         name: Faker::Name.name,
         responsible: Faker::Name.name,
@@ -13,7 +13,7 @@ namespace :code do
     end
 
     p 'seed Users'
-    for i in (1..20)
+    20.times do
       User.new({
         name: Faker::Name.name,
         email: Faker::Internet.email,
@@ -25,7 +25,7 @@ namespace :code do
     end
 
     p 'seed school performace'
-    for i in (1..100)
+    100.times do
 
       rd = rand(5.years).seconds.ago
 
@@ -39,7 +39,7 @@ namespace :code do
     end
 
     p 'Seed incidents'
-    for i in (1..100)
+    100.times do
       Incident.new({
         student_id: rand(1..10),
         user_id: rand(1..9),

@@ -15,11 +15,12 @@ RSpec.describe SchoolPerformace, type: :model do
 
   describe '#report' do
     it 'return list for given student_id and date interval' do
+      FactoryGirl.create_list(:student, 3)
       student = FactoryGirl.create(:student)
-      2.times { FactoryGirl.create(:school_performace, student: student) }
+      2.times { FactoryGirl.create(:school_performace, start_date: Date.new(2016,1,1), finish_date: Date.new(2016,1,2), student: student) }
       2.times { FactoryGirl.create(:school_performace) }
 
-      report = SchoolPerformace.report(student.id, Time.now, Time.now + 3.days)
+      report = SchoolPerformace.report(student.id, Date.new(2016,1,1), Date.new(2016,1,2))
       expect(report.count).to eq(2)
     end
   end

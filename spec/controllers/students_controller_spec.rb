@@ -41,6 +41,25 @@ RSpec.describe StudentsController, type: :controller do
 
           expect(response).to render_template('index')
         end
+
+        context 'without params[:search]' do
+          it 'assigns @students with all students paginated' do
+            get :index
+
+            expected_students = Student.all.page(nil)
+            expect(assigns(:students)).to eq(expected_students)
+          end
+        end
+
+        context 'with params[:search]' do
+          it 'assigns @students with students searched for params[:search]' do
+            searchable_context = 'search_test'
+            get :index, { search: searchable_context }
+
+            expected_students = Student.search(searchable_context).page(nil)
+            expect(assigns(:students)).to eq(expected_students)
+          end
+        end
       end
 
       describe "GET #show" do

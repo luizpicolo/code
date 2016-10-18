@@ -1,27 +1,27 @@
 <div class="subtitle-list page-header">
   <%= link_to incidents_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+    <span class="glyphicon glyphicon-arrow-left"></span> <%= t('code.buttons.back') %>
   <% end %>
   <%= link_to edit_incident_path(@incident), class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-pencil"></span> Editar
+    <span class="glyphicon glyphicon-pencil"></span> <%= t('code.buttons.edit') %>
   <% end %>
-  <h1>Visualizar ocorrência</h1>
+  <h1><%= t('code.incident.show_incident') %></h1>
 </div>
 
 <dl class="view">
-  <dt>Estudante:</dt>
+  <dt><%= t('code.incident.student') %>:</dt>
   <dd><%= @incident.student.name %></dd>
 
-  <dt>Data ocorrência:</dt>
+  <dt><%= t('code.incident.date_incident') %>:</dt>
   <dd><%= @incident.date_insident_format %></dd>
 
-  <dt>Criado por:</dt>
+  <dt><%= t('code.incident.created_by') %>:</dt>
   <dd><%= @incident.user.name %></dd>
 
-  <dt>Descrição:</dt>
+  <dt><%= t('code.incident.description') %>:</dt>
   <dd><%= @incident.description.html_safe %></dd>
 
-  <dt>Solução:</dt>
+  <dt><%= t('code.incident.solution') %>:</dt>
   <dd><%= @incident.soluction.html_safe %></dd>
 
 </dl>

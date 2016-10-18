@@ -1,11 +1,11 @@
 <div class="subtitle-list page-header">
   <%= link_to school_performaces_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-list-alt"></span> Voltar
+    <span class="glyphicon glyphicon-list-alt"></span> <%= t('code.buttons.back') %>
   <% end %>
   <%= link_to @school_performace, class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-info-sign"></span> Visualizar
+    <span class="glyphicon glyphicon-info-sign"></span> <%= t('code.buttons.show') %>
   <% end %>
-  <h1>Editar performace escolar</h1>
+  <h1><%= t('code.school_performace.edit_performance') %></h1>
 </div>
 
 <%= render 'form' %>

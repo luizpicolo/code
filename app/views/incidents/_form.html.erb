@@ -1,24 +1,24 @@
 <%= form_for(@incident, html: { class: "form-horizontal", role: "form" }) do |f| %>
   <div class="form-group">
-    <%= f.label :student, 'Estudante', class: "col-sm-2 control-label" %>
+    <%= f.label :student, t('code.incident.student'), class: "col-sm-2 control-label" %>
     <div class="col-sm-5">
       <%= f.autocomplete_field :student_id, autocomplete_student_name_school_performaces_path, class: "form-control", value: @incident.value_form %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :date_incident, 'Data ocorrência', class: "col-sm-2 control-label" %>
+    <%= f.label :date_incident, t('code.incident.date_incident'), class: "col-sm-2 control-label" %>
     <div class="col-sm-5">
       <%= f.text_field :date_incident, class: "form-control datepicker", value: @incident.date_insident_format %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :description, 'Descrição', class: "col-sm-2 control-label" %>
+    <%= f.label :description, t('code.incident.description'), class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
       <%= f.text_area :description, class: "form-control wysihtml5" %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :soluction, 'Solução', class: "col-sm-2 control-label" %>
+    <%= f.label :soluction, t('code.incident.solution'), class: "col-sm-2 control-label" %>
     <div class="col-sm-10">
       <%= f.text_area :soluction, class: "form-control wysihtml5" %>
     </div>

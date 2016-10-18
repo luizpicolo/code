@@ -1,24 +1,24 @@
 <div class="subtitle-list page-header">
   <%= link_to school_performaces_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+    <span class="glyphicon glyphicon-arrow-left"></span> <%= t('code.buttons.back') %>
   <% end %>
   <%= link_to edit_school_performace_path(@school_performace), class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-pencil"></span> Editar
+    <span class="glyphicon glyphicon-pencil"></span> <%= t('code.buttons.edit') %>
   <% end %>
-  <h1>Visualizar desempenho escolar</h1>
+  <h1><%= t('code.school_performace.show_performance') %></h1>
 </div>
 
 <dl class="view">
-  <dt>Estudante:</dt>
+  <dt><%= t('code.school_performace.student') %>:</dt>
   <dd><%= @school_performace.student.name %></dd>
 
-  <dt>Inicial:</dt>
+  <dt><%= t('code.school_performace.start_date') %>:</dt>
   <dd><%= @school_performace.sdate %></dd>
 
-  <dt>Final:</dt>
+  <dt><%= t('code.school_performace.finish_date') %>:</dt>
   <dd><%= @school_performace.fdate %></dd>
 
-  <dt>Descrição:</dt>
+  <dt><%= t('code.school_performace.description') %>:</dt>
   <dd><%= @school_performace.description.html_safe %></dd>
 
 </dl>

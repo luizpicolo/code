@@ -18,6 +18,23 @@ pt-BR:
       description: "Descrição"
       solution: "Solução"
 
+    student:
+      title: "Estudantes"
+      list_student: "Lista de estudantes"
+      show_student: "Visualizar estudante"
+      edit_student: "Editar estudante"
+      new_student: "Novo estudante"
+      name: "Nome"
+      responsible: "Responsável"
+      contact_resp: "Contato resp."
+      contact_responsible: "Contato responável"
+      date_enrolment: "Data matrícula"
+      image: "Imagem"
+      active: "Ativo?"
+      id: "ID"
+      status: "Status"
+      actions: "Ações"
+
     logout: 'Sair do sistema'
     report: 'Relatório'
     profile:

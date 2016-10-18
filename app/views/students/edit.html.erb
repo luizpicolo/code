@@ -1,11 +1,11 @@
 <div class="subtitle-list page-header">
   <%= link_to students_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+    <span class="glyphicon glyphicon-arrow-left"></span> <%= t('code.buttons.back') %>
   <% end %>
   <%= link_to @student, class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-info-sign"></span> Visualizar
+    <span class="glyphicon glyphicon-info-sign"></span> <%= t('code.buttons.show') %>
   <% end %>
-  <h1>Editar estudante</h1>
+  <h1><%= t('code.student.edit_student') %></h1>
 </div>
 
 <%= render 'form' %>

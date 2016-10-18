@@ -93,11 +93,34 @@ RSpec.describe StudentsController, type: :controller do
       describe 'PUT #update' do
         let!(:student) { FactoryGirl.create :student }
         let(:valid_params) { { responsible: Faker::GameOfThrones.character } }
+        let(:invalid_params) { { responsible: nil } }
 
-        it 'accepts changes' do
-          process :update, method: :put, params: { id: student.id, student: valid_params}
-          expect(flash[:success]).to eql('Estudante atualizado com sucesso')
-          expect(response).to redirect_to '/students'
+        context 'with valid params' do
+          it 'accepts changes' do
+            process :update, method: :put, params: { id: student.id, student: valid_params}
+            expect(flash[:success]).to eql('Estudante atualizado com sucesso')
+            expect(response).to redirect_to '/students'
+          end
+        end
+
+        context 'with invalid params' do
+          it 'redirect_to new_student_path' do
+            put :update, id: student.id, student: invalid_params
+            expect(response).to redirect_to(new_student_path)
+          end
+
+          it 'adds flash[:error] with error about update' do
+            put :update, id: student.id, student: invalid_params
+
+            student = assigns(:student)
+
+            error_msg = []
+            student.errors.full_messages.each do |msg|
+              error_msg << "<div>#{msg}</div>"
+            end
+
+            expect(flash[:error]).to eq(error_msg.join)
+          end
         end
       end
 

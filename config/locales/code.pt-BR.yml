@@ -5,7 +5,18 @@ pt-BR:
     # Entity
     user: "Usuários"
     student: 'Estudantes'
-    school_performace: 'Desempenho escolar'
+
+    school_performace:
+      title: "Desempenho escolar"
+      list_performances: "Lista de desempenhos escolares"
+      edit_performance: "Editar performance escolar"
+      new_performance: "Novo desempenho escolar"
+      show_performance: "Visualizar desempenho escolar"
+      student: "Estudante"
+      start_date: "Início"
+      finish_date: "Final"
+      description: "Descrição"
+
     incident:
       title: "Ocorrência"
       list_incidents: "Lista de ocorrência"

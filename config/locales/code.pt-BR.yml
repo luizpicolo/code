@@ -5,6 +5,7 @@ pt-BR:
     # Entity
     user: "Usuários"
     student: 'Estudantes'
+
     school_performace:
       title: "Desempenho escolar"
       list_performances: "Lista de desempenhos escolares"
@@ -16,7 +17,18 @@ pt-BR:
       finish_date: "Final"
       description: "Descrição"
 
-    incident: 'Ocorrência'
+    incident:
+      title: "Ocorrência"
+      list_incidents: "Lista de ocorrência"
+      edit_incident: "Editar ocorrência"
+      new_incident: "Nova ocorrência"
+      show_incident: "Visualizar ocorrência"
+      created_by: "Criado por"
+      student: "Estudante"
+      date_incident: "Data ocorrência"
+      description: "Descrição"
+      solution: "Solução"
+
     logout: 'Sair do sistema'
     report: 'Relatório'
     profile:

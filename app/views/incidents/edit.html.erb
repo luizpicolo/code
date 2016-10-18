@@ -1,11 +1,11 @@
 <div class="subtitle-list page-header">
   <%= link_to incidents_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+    <span class="glyphicon glyphicon-arrow-left"></span> <%= t('code.buttons.back') %>
   <% end %>
   <%= link_to @incident, class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-info-sign"></span> Visualizar
+    <span class="glyphicon glyphicon-info-sign"></span> <%= t('code.buttons.show') %>
   <% end %>
-  <h1>Editar ocorrência</h1>
+  <h1><%= t('code.incident.edit_incident') %></h1>
 </div>
 
 <%= render 'form' %>

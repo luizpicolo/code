@@ -1,16 +1,16 @@
 <div class="subtitle-list page-header">
   <%= link_to new_incident_path, class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-plus"></span> Nova ocorrência
+    <span class="glyphicon glyphicon-plus"></span> <%= t('code.incident.new_incident') %>
   <% end %>
-  <h1>Lista de ocorrência</h1>
+  <h1><%= t('code.incident.list_incidents') %></h1>
 </div>
 
 <div class="text-right">
   <form class="navbar-form" role="search">
     <div class="form-group">
-      <input name="search" type="text" value="<%= params[:search] %>"class="form-control" placeholder="Buscar">
+      <input name="search" type="text" value="<%= params[:search] %>"class="form-control" placeholder="<%= t('code.buttons.search') %>">
     </div>
-    <button type="submit" class="btn btn-primary">Buscar</button>
+    <button type="submit" class="btn btn-primary"><%= t('code.buttons.search') %></button>
   </form>
 </div>
 
@@ -34,9 +34,9 @@
         <td><%= incident.user.try(:name) %></td>
         <td><%= incident.date_insident_format %></td>
         <td class="text-center">
-          <%= link_to 'Visualizar', incident, class: "btn btn-primary btn-xs" %>
-          <%= link_to 'Editar', edit_incident_path(incident), class: "btn btn-primary btn-xs"%>
-          <%= link_to 'Excluir', incident, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, class: "btn btn-danger btn-xs" %>
+          <%= link_to t('code.buttons.show'), incident, class: "btn btn-primary btn-xs" %>
+          <%= link_to t('code.buttons.edit'), edit_incident_path(incident), class: "btn btn-primary btn-xs"%>
+          <%= link_to t('code.buttons.destroy'), incident, method: :delete, data: { confirm: 'Deseja realmente excluir?' }, class: "btn btn-danger btn-xs" %>
         </td>
       <% end %>
     </tbody>

@@ -27,7 +27,7 @@ class SchoolPerformace < ApplicationRecord
   end
 
   def self.report(student, start_date, finish_date)
-    where('student_id = ?', student.to_i).where('start_date >= ?', start_date)
-      .where('finish_date <= ?', finish_date)
+    where('(start_date >= :start_date and finish_date <= :finish_date and student_id = :student_id)',
+          start_date: start_date, finish_date: finish_date, student_id: student.to_i)
   end
 end

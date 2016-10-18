@@ -71,7 +71,7 @@ RSpec.describe StudentsController, type: :controller do
         end
       end
 
-      describe 'GET #update' do
+      describe 'PUT #update' do
         let!(:student) { FactoryGirl.create :student }
         let(:valid_params) { { responsible: Faker::GameOfThrones.character } }
 
@@ -82,7 +82,7 @@ RSpec.describe StudentsController, type: :controller do
         end
       end
 
-      describe 'GET #create' do
+      describe 'POST #create' do
         context "with valid attributes" do
           it 'create a new student' do
             expect{
@@ -112,7 +112,7 @@ RSpec.describe StudentsController, type: :controller do
         end
       end
 
-      describe 'DELETE destroy' do
+      describe 'DELETE #destroy' do
         before :each do
           @student = FactoryGirl.create(:student)
         end

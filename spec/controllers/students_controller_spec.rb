@@ -41,6 +41,25 @@ RSpec.describe StudentsController, type: :controller do
 
           expect(response).to render_template('index')
         end
+
+        context 'without params[:search]' do
+          it 'assigns @students with all students paginated' do
+            get :index
+
+            expected_students = Student.all.page(nil)
+            expect(assigns(:students)).to eq(expected_students)
+          end
+        end
+
+        context 'with params[:search]' do
+          it 'assigns @students with students searched for params[:search]' do
+            searchable_context = 'search_test'
+            get :index, { search: searchable_context }
+
+            expected_students = Student.search(searchable_context).page(nil)
+            expect(assigns(:students)).to eq(expected_students)
+          end
+        end
       end
 
       describe "GET #show" do
@@ -71,23 +90,46 @@ RSpec.describe StudentsController, type: :controller do
         end
       end
 
-      describe 'GET #update' do
+      describe 'PUT #update' do
         let!(:student) { FactoryGirl.create :student }
         let(:valid_params) { { responsible: Faker::GameOfThrones.character } }
+        let(:invalid_params) { { responsible: nil } }
 
-        it 'accepts changes' do
-          process :update, method: :put, params: { id: student.id, student: valid_params}
-          expect(flash[:success]).to eql('Estudante atualizado com sucesso')
-          expect(response).to redirect_to '/students'
+        context 'with valid params' do
+          it 'accepts changes' do
+            process :update, method: :put, params: { id: student.id, student: valid_params}
+            expect(flash[:success]).to eql('Estudante atualizado com sucesso')
+            expect(response).to redirect_to '/students'
+          end
+        end
+
+        context 'with invalid params' do
+          it 'redirect_to new_student_path' do
+            put :update, id: student.id, student: invalid_params
+            expect(response).to redirect_to(new_student_path)
+          end
+
+          it 'adds error to flash[:error]' do
+            put :update, id: student.id, student: invalid_params
+
+            student = assigns(:student)
+
+            error_msg = []
+            student.errors.full_messages.each do |msg|
+              error_msg << "<div>#{msg}</div>"
+            end
+
+            expect(flash[:error]).to eq(error_msg.join)
+          end
         end
       end
 
-      describe 'GET #create' do
+      describe 'POST #create' do
         context "with valid attributes" do
           it 'create a new student' do
             expect{
               process :create, method: :post, params: { student: {name: Faker::StarWars.character, responsible: Faker::StarWars.character, contact_responsible: Faker::Internet.email, date_enrolment: Time.zone.now - 3.month , status: true }}
-              }.to change(Student,:count).by(1)
+            }.to change(Student,:count).by(1)
           end
 
           it "redirects to the Students" do
@@ -112,22 +154,37 @@ RSpec.describe StudentsController, type: :controller do
         end
       end
 
-      describe 'DELETE destroy' do
-        before :each do
-          @student = FactoryGirl.create(:student)
+      describe 'DELETE #destroy' do
+        let!(:student) { FactoryGirl.create :student }
+
+        context 'successful destroy' do
+          it "deletes the student" do
+            expect{
+              process :destroy, method: :delete, params: { id: student}
+            }.to change(Student,:count).by(-1)
+          end
+
+          it "redirects to index" do
+            process :destroy, method: :delete, params: { id: student}
+            expect(response).to redirect_to '/students'
+            expect(flash[:success]).to eql('Estudante excluído com sucesso')
+          end
         end
 
-        it "deletes the student" do
-          expect{
-            process :destroy, method: :delete, params: { id: @student}
-          }.to change(Student,:count).by(-1)
-        end
+        context 'unsuccessful destroy' do
+          it "adds error to flash[:error]" do
+            allow_any_instance_of(Student).to receive(:destroy).and_return(false)
 
-        it "redirects to index" do
-          process :destroy, method: :delete, params: { id: @student}
-          expect(response).to redirect_to '/students'
-          expect(flash[:success]).to eql('Estudante excluído com sucesso')
+            delete :destroy, { id: student }
+            expect(flash[:error]).to eq('Erro ao excluir estudante')
+          end
 
+          it "redirects to index" do
+            allow_any_instance_of(Student).to receive(:destroy).and_return(false)
+
+            delete :destroy, { id: student }
+            expect(response).to redirect_to students_path
+          end
         end
       end
     end

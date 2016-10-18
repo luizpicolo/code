@@ -155,20 +155,36 @@ RSpec.describe StudentsController, type: :controller do
       end
 
       describe 'DELETE #destroy' do
-        before :each do
-          @student = FactoryGirl.create(:student)
+        let!(:student) { FactoryGirl.create :student }
+
+        context 'successful destroy' do
+          it "deletes the student" do
+            expect{
+              process :destroy, method: :delete, params: { id: student}
+            }.to change(Student,:count).by(-1)
+          end
+
+          it "redirects to index" do
+            process :destroy, method: :delete, params: { id: student}
+            expect(response).to redirect_to '/students'
+            expect(flash[:success]).to eql('Estudante excluído com sucesso')
+          end
         end
 
-        it "deletes the student" do
-          expect{
-            process :destroy, method: :delete, params: { id: @student}
-          }.to change(Student,:count).by(-1)
-        end
+        context 'unsuccessful destroy' do
+          it "adds error to flash[:error]" do
+            allow_any_instance_of(Student).to receive(:destroy).and_return(false)
 
-        it "redirects to index" do
-          process :destroy, method: :delete, params: { id: @student}
-          expect(response).to redirect_to '/students'
-          expect(flash[:success]).to eql('Estudante excluído com sucesso')
+            delete :destroy, { id: student }
+            expect(flash[:error]).to eq('Erro ao excluir estudante')
+          end
+
+          it "redirects to index" do
+            allow_any_instance_of(Student).to receive(:destroy).and_return(false)
+
+            delete :destroy, { id: student }
+            expect(response).to redirect_to students_path
+          end
         end
       end
     end

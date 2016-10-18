@@ -1,30 +1,30 @@
 <div class="subtitle-list page-header">
   <%= link_to students_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+    <span class="glyphicon glyphicon-arrow-left"></span> <%= t('code.buttons.back') %>
   <% end %>
   <%= link_to edit_student_path(@student), class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-pencil"></span> Editar
+    <span class="glyphicon glyphicon-pencil"></span> <%= t('code.buttons.edit') %>
   <% end %>
-  <h1>Visualizar estudante</h1>
+  <h1><%= t('code.student.show_student') %></h1>
 </div>
 
 <dl class="view">
-  <dt>Name:</dt>
+  <dt><%= t('code.student.name') %>:</dt>
   <dd><%= @student.name %></dd>
 
-  <dt>Responsible:</dt>
+  <dt><%= t('code.student.responsable') %>:</dt>
   <dd><%= @student.responsible %></dd>
 
-  <dt>Contact responsible:</dt>
+  <dt><%= t('code.student.contact_responsable') %>:</dt>
   <dd><%= @student.contact_responsible %></dd>
 
-  <dt>Date enrolment:</dt>
+  <dt><%= t('code.student.date_enrolment') %>:</dt>
   <dd><%= @student.date_enrolment_format %></dd>
 
-  <dt>Image:</dt>
+  <dt><%= t('code.student.image') %>:</dt>
   <dd><%= image_tag @student.image.thumb %></dd>
 
-  <dt>Status:</dt>
+  <dt><%= t('code.student.status') %>:</dt>
   <dd><%= @student.status %></dd>
 
 </dl>

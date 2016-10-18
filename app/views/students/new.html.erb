@@ -1,8 +1,8 @@
 <div class="subtitle-list page-header">
   <%= link_to students_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+    <span class="glyphicon glyphicon-arrow-left"></span> <%= t('code.buttons.back') %>
   <% end %>
-  <h1>Novo estudante</h1>
+  <h1><%= t('code.student.new_student') %></h1>
 </div>
 
 <%= render 'form' %>

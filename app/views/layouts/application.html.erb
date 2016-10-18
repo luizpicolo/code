@@ -42,7 +42,7 @@
     <div class="col-md-3 sidebar-offcanvas" id="sidebar">
       <div class="list-group">
         <% if current_user.admin? %>
-        <%= link_to t('code.student'), students_path, class: "list-group-item" %>
+        <%= link_to t('code.student.title'), students_path, class: "list-group-item" %>
         <% end %>
         <%= link_to t('code.school_performace.title'), school_performaces_path, class: "list-group-item" %>
         <%= link_to t('code.incident.title'), incidents_path, class: "list-group-item" %>

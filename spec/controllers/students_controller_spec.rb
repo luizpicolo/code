@@ -127,7 +127,6 @@ RSpec.describe StudentsController, type: :controller do
           process :destroy, method: :delete, params: { id: @student}
           expect(response).to redirect_to '/students'
           expect(flash[:success]).to eql('Estudante excluído com sucesso')
-
         end
       end
     end

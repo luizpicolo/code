@@ -3,6 +3,8 @@
 ---
 
 [![Build Status](https://travis-ci.org/sistemacode/code.svg?branch=FixedSpecs)](https://travis-ci.org/sistemacode/code)
+[![Code Climate](https://codeclimate.com/github/sistemacode/code/badges/gpa.svg)](https://codeclimate.com/github/sistemacode/code)
+[![Test Coverage](https://codeclimate.com/github/sistemacode/code/badges/coverage.svg)](https://codeclimate.com/github/sistemacode/code/coverage)
 
 # C.O.D.E - Controle de ocorrências e desempenho escolar
 

@@ -1,8 +1,8 @@
 <div class="subtitle-list page-header">
   <%= link_to incidents_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+    <span class="glyphicon glyphicon-arrow-left"></span> <%= t('code.buttons.back') %>
   <% end %>
-  <h1>Nova ocorrência</h1>
+  <h1><%= t('code.incident.new_incident') %></h1>
 </div>
 
 <%= render 'form' %>

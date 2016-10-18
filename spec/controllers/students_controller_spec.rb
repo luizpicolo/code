@@ -109,7 +109,7 @@ RSpec.describe StudentsController, type: :controller do
             expect(response).to redirect_to(new_student_path)
           end
 
-          it 'adds flash[:error] with error about update' do
+          it 'adds error to flash[:error]' do
             put :update, id: student.id, student: invalid_params
 
             student = assigns(:student)
@@ -129,7 +129,7 @@ RSpec.describe StudentsController, type: :controller do
           it 'create a new student' do
             expect{
               process :create, method: :post, params: { student: {name: Faker::StarWars.character, responsible: Faker::StarWars.character, contact_responsible: Faker::Internet.email, date_enrolment: Time.zone.now - 3.month , status: true }}
-              }.to change(Student,:count).by(1)
+            }.to change(Student,:count).by(1)
           end
 
           it "redirects to the Students" do

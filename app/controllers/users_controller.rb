@@ -29,11 +29,8 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_path, flash: { success: 'Usuário cadastro com sucesso' }
     else
-      error_msg = ''
-      @user.errors.full_messages.each do |msg|
-        error_msg << "<div>#{msg}</div>"
-      end
-      redirect_to new_user_path, flash: { error: error_msg }
+      flash.now[:error] = @user.errors.full_messages
+      render :new
     end
   end
 
@@ -45,11 +42,8 @@ class UsersController < ApplicationController
         redirect_to :back, flash: { success: 'Usuário atualizado com sucesso' }
       end
     else
-      error_msg = ''
-      @user.errors.full_messages.each do |msg|
-        error_msg << "<div>#{msg}</div>"
-      end
-      redirect_to :back, flash: { error: error_msg }
+      flash.now[:error] = @user.errors.full_messages
+      render :edit
     end
   end
 

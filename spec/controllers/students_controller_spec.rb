@@ -104,9 +104,9 @@ RSpec.describe StudentsController, type: :controller do
         end
 
         context 'with invalid params' do
-          it 'redirect_to new_student_path' do
+          it 'renders the edit template' do
             put :update, id: student.id, student: invalid_params
-            expect(response).to redirect_to(new_student_path)
+            expect(response).to render_template(:edit)
           end
 
           it 'adds error to flash[:error]' do
@@ -116,10 +116,10 @@ RSpec.describe StudentsController, type: :controller do
 
             error_msg = []
             student.errors.full_messages.each do |msg|
-              error_msg << "<div>#{msg}</div>"
+              error_msg << "#{msg}"
             end
 
-            expect(flash[:error]).to eq(error_msg.join)
+            expect(flash[:error]).to eq(error_msg)
           end
         end
       end
@@ -145,11 +145,12 @@ RSpec.describe StudentsController, type: :controller do
             }.to_not change(Student,:count)
           end
 
-          it "re-renders the new method" do
+          it "renders the new template" do
             process :create, method: :post, params: { student: {name: nil, responsible: nil, contact_responsible: Faker::Internet.email, date_enrolment: Time.zone.now - 3.month , status: true }}
 
-            expect(flash[:error]).to eql('<div>Name não pode ficar em branco</div><div>Responsible não pode ficar em branco</div>')
-            expect(response).to redirect_to :new_student
+            expect(flash[:error]).to include("Name não pode ficar em branco")
+            expect(flash[:error]).to include("Responsible não pode ficar em branco")
+            expect(response).to render_template(:new)
           end
         end
       end

@@ -29,7 +29,6 @@ class SchoolPerformacesController < ApplicationController
   def create
     @school_performace = SchoolPerformace.new(school_performace_params)
     @school_performace.user = current_user
-    @school_performace.save
     if @school_performace.save
       redirect_to school_performaces_path, flash: { success: 'Desempenho escolar cadastro com sucesso' }
     else

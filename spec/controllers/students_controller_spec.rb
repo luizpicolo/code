@@ -54,7 +54,7 @@ RSpec.describe StudentsController, type: :controller do
         context 'with params[:search]' do
           it 'assigns @students with students searched for params[:search]' do
             searchable_context = 'search_test'
-            get :index, { search: searchable_context }
+            get :index, params: { search: searchable_context }
 
             expected_students = Student.search(searchable_context).page(nil)
             expect(assigns(:students)).to eq(expected_students)
@@ -105,12 +105,12 @@ RSpec.describe StudentsController, type: :controller do
 
         context 'with invalid params' do
           it 'redirect_to new_student_path' do
-            put :update, id: student.id, student: invalid_params
+            put :update, params: {id: student.id, student: invalid_params}
             expect(response).to redirect_to(new_student_path)
           end
 
           it 'adds error to flash[:error]' do
-            put :update, id: student.id, student: invalid_params
+            put :update, params: {id: student.id, student: invalid_params}
 
             student = assigns(:student)
 
@@ -175,14 +175,14 @@ RSpec.describe StudentsController, type: :controller do
           it "adds error to flash[:error]" do
             allow_any_instance_of(Student).to receive(:destroy).and_return(false)
 
-            delete :destroy, { id: student }
+            delete :destroy, params: { id: student }
             expect(flash[:error]).to eq('Erro ao excluir estudante')
           end
 
           it "redirects to index" do
             allow_any_instance_of(Student).to receive(:destroy).and_return(false)
 
-            delete :destroy, { id: student }
+            delete :destroy, params: { id: student }
             expect(response).to redirect_to students_path
           end
         end

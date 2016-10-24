@@ -29,11 +29,8 @@ class StudentsController < ApplicationController
     if @student.save
       redirect_to students_path, flash: { success: 'Estudante cadastro com sucesso' }
     else
-      error_msg = ''
-      @student.errors.full_messages.each do |msg|
-        error_msg << "<div>#{msg}</div>"
-      end
-      redirect_to new_student_path, flash: { error: error_msg }
+      flash.now[:error] = @student.errors.full_messages
+      render :new
     end
   end
 
@@ -41,11 +38,8 @@ class StudentsController < ApplicationController
     if @student.update(student_params)
       redirect_to students_path, flash: { success: 'Estudante atualizado com sucesso' }
     else
-      error_msg = ''
-      @student.errors.full_messages.each do |msg|
-        error_msg << "<div>#{msg}</div>"
-      end
-      redirect_to new_student_path, flash: { error: error_msg }
+      flash.now[:error] = @student.errors.full_messages
+      render :edit
     end
   end
 

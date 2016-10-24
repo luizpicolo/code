@@ -6,7 +6,13 @@
 	%>
     <div class="alert-message alert-message-<%= key %>">
       <button type="button" class="close">&times;</button>
-      <%= value.html_safe %>
+      <% if value.kind_of?(Array) %>
+        <% value.each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+      <% else %>
+        <div><%= value %></div>
+      <% end %>
     </div>
 <% end %>
 <%= show_messages %>

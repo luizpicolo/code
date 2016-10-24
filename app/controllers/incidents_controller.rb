@@ -30,18 +30,31 @@ class IncidentsController < ApplicationController
   def create
     @incident = Incident.new(incident_params)
     @incident.user = current_user
-    @incident.save
-    respond_with(@incident)
+
+    if @incident.save
+      redirect_to incident_path(@incident), flash: { success: 'Ocorrência cadastrada com sucesso' }
+    else
+      flash.now[:error] = @incident.errors.full_messages
+      render :new
+    end
   end
 
   def update
     @incident.update(incident_params)
-    respond_with(@incident)
+    if @incident.update(incident_params)
+      redirect_to incident_path(@incident), flash: { success: 'Ocorrência atualizada com sucesso' }
+    else
+      flash.now[:error] = @incident.errors.full_messages
+      render :edit
+    end
   end
 
   def destroy
-    @incident.destroy
-    respond_with(@incident)
+    if @incident.destroy
+      redirect_to incidents_path, flash: { success: 'Ocorrência excluída com sucesso' }
+    else
+      redirect_to incidents_path, flash: { error: 'Erro ao excluir ocorrência' }
+    end
   end
 
   private

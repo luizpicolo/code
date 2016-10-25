@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+  # frozen_string_literal: true
 require 'rails_helper'
 
 RSpec.describe IncidentsController, type: :controller do
@@ -87,12 +87,12 @@ RSpec.describe IncidentsController, type: :controller do
 
         context 'with invalid params' do
           it 'renders the edit template' do
-            put :update, id: incident.id, incident: invalid_params
+            put :update,  params: { id: incident.id, incident: invalid_params }
             expect(response).to render_template(:edit)
           end
 
           it 'adds error to flash[:error]' do
-            put :update, id: incident.id, incident: invalid_params
+            put :update,  params: { id: incident.id, incident: invalid_params } 
 
             incident = assigns(:incident)
 
@@ -168,14 +168,14 @@ RSpec.describe IncidentsController, type: :controller do
           it "adds error to flash[:error]" do
             allow_any_instance_of(Incident).to receive(:destroy).and_return(false)
 
-            delete :destroy, { id: incident }
+            delete :destroy,  params: { id: incident }
             expect(flash[:error]).to eq('Erro ao excluir ocorrência')
           end
 
           it "redirects to index" do
             allow_any_instance_of(Incident).to receive(:destroy).and_return(false)
 
-            delete :destroy, { id: incident }
+            delete :destroy, params: { id: incident }
             expect(response).to redirect_to incidents_path
           end
         end

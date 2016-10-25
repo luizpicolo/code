@@ -20,7 +20,7 @@
 //= require alert_message
 //= require turbolinks
 
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
   // Jquery ui
   $('.datepicker').datepicker();
 

@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/sistemacode/code.svg?branch=FixedSpecs)](https://travis-ci.org/sistemacode/code)
 [![Code Climate](https://codeclimate.com/github/sistemacode/code/badges/gpa.svg)](https://codeclimate.com/github/sistemacode/code)
-[![Test Coverage](https://codeclimate.com/github/sistemacode/code/badges/coverage.svg)](https://codeclimate.com/github/sistemacode/code/coverage)
+[![Coverage Status](https://coveralls.io/repos/github/sistemacode/code/badge.svg?branch=master)](https://coveralls.io/github/sistemacode/code?branch=master)
 
 # C.O.D.E - Controle de ocorrências e desempenho escolar
 
@@ -62,7 +62,7 @@ Caso deseje adicionar alguns dados de testes
 
 **Quinto passo:** Execute os testes no container:
 
-    ./scripts/development exec code rake db:test:prepare && ./scripts/development exec code rspec 
+    ./scripts/development exec code rake db:test:prepare && ./scripts/development exec code rspec
 
 **Observações**
 

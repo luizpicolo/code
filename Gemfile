@@ -40,6 +40,7 @@ gem 'record_tag_helper', '~> 1.0'
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'coveralls', require: false
   gem 'rails_db_info'
   gem 'capybara'
   gem 'email_spec'

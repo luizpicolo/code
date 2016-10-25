@@ -148,9 +148,20 @@ RSpec.describe StudentsController, type: :controller do
           it "renders the new template" do
             process :create, method: :post, params: { student: {name: nil, responsible: nil, contact_responsible: Faker::Internet.email, date_enrolment: Time.zone.now - 3.month , status: true }}
 
-            expect(flash[:error]).to include("Name não pode ficar em branco")
-            expect(flash[:error]).to include("Responsible não pode ficar em branco")
             expect(response).to render_template(:new)
+          end
+
+          it "adds error to flash[:error]" do
+            process :create, method: :post, params: { student: {name: nil, responsible: nil, contact_responsible: Faker::Internet.email, date_enrolment: Time.zone.now - 3.month , status: true }}
+
+            student = assigns(:student)
+
+            error_msg = []
+            student.errors.full_messages.each do |msg|
+              error_msg << "#{msg}"
+            end
+
+            expect(flash[:error]).to eq(error_msg)
           end
         end
       end

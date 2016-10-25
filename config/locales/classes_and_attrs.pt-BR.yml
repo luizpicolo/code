@@ -7,6 +7,23 @@ pt-BR:
       incident: 'Ocorrência'
 
     attributes:
+      student:
+        name: "Nome"
+        responsible: "Responsável"
+        contact_responsible: "Contato Responsável"
+        date_enrolment: "Data Matrícula"
+        image: "Imagem"
+        status: "Ativo?"
+      school_performace:
+        student: "Estudante"
+        start_date: "Início"
+        finish_date: "Final"
+        description: "Descrição"
+      incident:
+        student: "Estudante"
+        date_incident: "Data Ocorrência"
+        description: "Descrição"
+        soluction: "Solução"
       user:
         password: "Senha"
         password_confirmation: "Confirmar senha"

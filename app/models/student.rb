@@ -8,13 +8,16 @@ class Student < ApplicationRecord
   mount_uploader :image, StudentUploader
 
   # Validates
-  validates :name, :responsible, :contact_responsible, :date_enrolment,
-            :status, presence: true
+  validates :name, :responsible, :contact_responsible, :date_enrolment, presence: true
 
   # Association
   has_many :school_performaces, inverse_of: :student
   has_many :incidents, inverse_of: :student
   has_many :reports, inverse_of: :student
+
+  def status
+    false if read_attribute(:status).blank?
+  end
 
   def date_enrolment_format
     date_enrolment.try(:strftime, '%d/%m/%Y')

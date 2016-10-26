@@ -6,11 +6,7 @@ class SchoolPerformacesController < ApplicationController
   respond_to :html
 
   def index
-    if current_user.admin?
-      @school_performaces = SchoolPerformace.search(params[:search]).page(params[:page])
-    else
-      @school_performaces = SchoolPerformace.where(user: current_user).search(params[:search]).page(params[:page])
-    end
+    @school_performaces = SearchWithUserService.new(SchoolPerformace, current_user).search(params)
     respond_with(@school_performaces)
   end
 

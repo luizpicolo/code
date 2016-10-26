@@ -7,11 +7,7 @@ class IncidentsController < ApplicationController
   respond_to :html
 
   def index
-    if current_user.admin?
-      @incidents = Incident.search(params[:search]).page(params[:page])
-    else
-      @incidents = Incident.where(user: current_user).search(params[:search]).page(params[:page])
-    end
+    @incidents = SearchWithUserService.new(Incident, current_user).search(params)
     respond_with(@incidents)
   end
 

@@ -1,4 +1,4 @@
-  # frozen_string_literal: true
+# frozen_string_literal: true
 require 'rails_helper'
 
 RSpec.describe IncidentsController, type: :controller do
@@ -18,6 +18,20 @@ RSpec.describe IncidentsController, type: :controller do
       end
     end
   end
+  describe 'GET' do
+    context 'with params[:search]' do
+      let(:user) { FactoryGirl.create(:user, admin: true) }
+      before { sign_in user }
+
+      it 'assigns @incidents with name searched for params[:search]' do
+        first_incident = FactoryGirl.create(:incident, user: user)
+
+        get :index, method: :get, params: { search: user.name }
+        expect(assigns(:incidents)).to eq([first_incident])
+      end
+    end
+  end
+
 
   %w(admin non-admin).each do |action|
     describe "with a #{action} user logged in" do

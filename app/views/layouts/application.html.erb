@@ -47,7 +47,7 @@
         <%= link_to t('code.school_performace.title'), school_performaces_path, class: "list-group-item" %>
         <%= link_to t('code.incident.title'), incidents_path, class: "list-group-item" %>
         <% if current_user.admin? %>
-        <%= link_to t('code.report'), report_path, class: "list-group-item" %>
+        <%= link_to t('code.report.title'), report_path, class: "list-group-item" %>
         <% end %>
         <%= link_to t('code.profile.title'), "/perfil", class: "list-group-item"%>
         <% if current_user.admin? %>

@@ -46,8 +46,17 @@ pt-BR:
       status: "Status"
       actions: "Ações"
 
-    logout: 'Sair do sistema'
-    report: 'Relatório'
+    logout: "Sair do sistema"
+    report:
+      title: "Relatório"
+      page_title: "Gerar relatório"
+      student: "Estudante"
+      type: "Tipo"
+      start_date: "Data inicial"
+      end_date: "Data final"
+      generate_report: "Gerar relatório"
+      incident: "Ocorrência"
+      school_performace: "Desempenho escolar"
     profile:
       title: "Perfil"
       list_users: "Lista de usuários"

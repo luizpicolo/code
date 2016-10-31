@@ -1,3 +1,6 @@
 --color
+--order=random
+--format Fuubar
 --require spec_helper
+--drb
 --tty false

@@ -24,6 +24,16 @@ namespace :code do
       }).save
     end
 
+    p 'seed Admin'
+    User.new({
+      name: 'Admin User',
+      email: 'admin@admin.com.br',
+      password: '12345678',
+      password_confirmation: '12345678',
+      admin: true,
+      status: true
+    }).save
+
     p 'seed school performace'
     100.times do
 
